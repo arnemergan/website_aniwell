@@ -1,0 +1,30 @@
+nav {
+  ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      display: inline-flex;
+
+      a {
+        color: var(--black);
+        cursor: pointer;
+        text-decoration: none;
+        font-size: var(--font-size-xs);
+        font-style: var(--font-style);
+        font-weight: var(--font-weight-semi-bold);
+
+        &:hover {
+          color: var(--blue-secondary);
+        }
+      }
+
+      &:nth-child(2) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+}
