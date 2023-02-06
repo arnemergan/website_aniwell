@@ -1,19 +1,21 @@
-:root {
-  //font
-  --font-family: "Quicksand";
-  --font-style: normal;
-  --font-weight-400: 400;
-  --font-weight-semi-bold: 500;
-  --font-weight-bold: 700;
-  --font-size-xs: 16px;
-  --font-size-sm: 20px;
-  --font-size-md: 24px;
-  --font-size-lg: 48px;
-  --font-size-xl: 64px;
+//font
+$font-family: "Quicksand";
+$font-style-normal: normal;
+$font-weight-400: 400;
+$font-weight-semi-bold: 500;
+$font-weight-bold: 700;
+$font-size-xs: 16px;
+$font-size-sm: 20px;
+$font-size-md: 24px;
+$font-size-mdl: 36px;
+$font-size-lg: 40px;
+$font-size-xl: 48px;
+$font-size-xll: 64px;
 
-  //colors
-  --white: #ffffff;
-  --black: #000000;
-  --blue-primary: #0066bf;
-  --blue-secondary: #0a2054;
-}
+//colors
+$white: #ffffff;
+$black: #000000;
+$primary: #00574b;
+$secondary: #00a98d;
+$primary-light: #e8fef9;
+$primary-lighter: #e7fefe;

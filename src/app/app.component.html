@@ -1,17 +1,30 @@
 <nav>
   <app-container>
     <app-row>
-      <div class="col-md-3"></div>
+      <div class="col-md-3">
+        <a routerLink="home">
+          {{ "ANIWELL" | translate }}
+        </a>
+      </div>
       <div class="col-md-6">
         <ul>
           <li>
             <a>{{ "NAV_SERVICES" | translate }}</a>
           </li>
-          <li><a>praktijk</a></li>
-          <li><a>team</a></li>
+          <li>
+            <a>{{ "NAV_PRACTICE" | translate }}</a>
+          </li>
+          <li>
+            <a>{{ "NAV_TEAM" | translate }}</a>
+          </li>
+          <li>
+            <a>{{ "NAV_PICTURES" | translate }}</a>
+          </li>
         </ul>
       </div>
-      <div class="col-md-3"></div>
+      <div class="col-md-3">
+        <app-button color="primary" label="052 35 35 35"></app-button>
+      </div>
     </app-row>
   </app-container>
 </nav>

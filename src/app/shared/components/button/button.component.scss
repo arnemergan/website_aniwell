@@ -1,0 +1,21 @@
+@import "../../../../assets/style/global/globals.scss";
+
+button {
+  border: none;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semi-bold;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.primary {
+  color: $white;
+  background-color: $primary;
+
+  &:hover {
+    background-color: lighten($primary, 5%);
+  }
+}
