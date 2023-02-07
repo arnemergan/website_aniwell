@@ -4,18 +4,54 @@ button {
   border: none;
   text-decoration: none;
   border-radius: 25px;
-  font-size: $font-size-sm;
+  font-size: $font-size-xs;
   font-weight: $font-weight-semi-bold;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 0.3rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+span {
+  padding-left: 0.5rem;
+}
+
+.lg {
+  font-size: $font-size-lg;
+}
+
+.md {
+  font-size: $font-size-md;
+}
+
+.sm {
+  font-size: $font-size-sm;
+}
+
+.xs {
+  font-size: $font-size-xs;
+}
+
+.xxs {
+  font-size: $font-size-xxs;
 }
 
 .primary {
   color: $white;
   background-color: $primary;
 
-  &:hover {
-    background-color: lighten($primary, 5%);
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: $primary-dark;
+  }
+}
+
+.outline-primary {
+  color: $primary;
+  background-color: $white;
+
+  &:hover,
+  &:focus {
+    color: $primary-darker;
   }
 }

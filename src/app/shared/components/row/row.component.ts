@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-row',
-  templateUrl: './row.component.html',
-  styleUrls: ['./row.component.scss']
+  template: `<div class="row">
+    <ng-content></ng-content>
+  </div>`,
+  styleUrls: ['./row.component.scss'],
 })
 export class RowComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

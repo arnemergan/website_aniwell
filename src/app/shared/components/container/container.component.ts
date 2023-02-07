@@ -2,7 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-container',
-  templateUrl: './container.component.html',
+  template: `<div class="container">
+    <ng-content></ng-content>
+  </div> `,
   styleUrls: ['./container.component.scss'],
 })
 export class ContainerComponent implements OnInit {
