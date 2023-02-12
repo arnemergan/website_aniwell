@@ -20,7 +20,8 @@ export class ButtonComponent implements OnInit {
     | 'primary'
     | 'secondary'
     | 'outline-secondary'
-    | 'outline-primary';
+    | 'outline-primary'
+    | 'app-dropdown';
   @Input() label: string;
   @Input() routerPath: string;
   @Input() icon: string;

@@ -55,3 +55,12 @@ span {
     color: $primary-darker;
   }
 }
+
+.app-dropdown {
+  color: $primary;
+
+  &:hover,
+  &:focus {
+    color: $primary-darker;
+  }
+}

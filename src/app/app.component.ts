@@ -3,18 +3,66 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
-  template: `<nav>
-      <app-container>
+  template: `
+    <nav class="fixed-top">
+      <app-container size="fluid" class="top-section">
+        <app-row>
+          <div class="col-lg-12">
+            <app-container>
+              <app-row>
+                <div class="col">
+                  <div class="dropdown">
+                    <app-button
+                      size="xs"
+                      color="app-dropdown"
+                      icon="bi bi-translate"
+                      [label]="'LANGUAGE' | translate"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    ></app-button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          [routerLink]="['/', 'nl', 'home']"
+                          >Nederlands</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          [routerLink]="['/', 'fr', 'home']"
+                          >Français</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          [routerLink]="['/', 'en', 'home']"
+                          >English</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </app-row>
+            </app-container>
+          </div>
+        </app-row>
+      </app-container>
+      <app-container class="bottom-section">
         <app-row class="lg-screen">
           <div class="col-md-3">
-            <a routerLink="home">
+            <a routerLink="home" fragment="top">
               {{ 'ANIWELL' | translate }}
             </a>
           </div>
           <div class="col-md-6">
             <ul>
               <li>
-                <a>{{ 'NAV_SERVICES' | translate }}</a>
+                <a routerLink="home" fragment="services">{{
+                  'NAV_SERVICES' | translate
+                }}</a>
               </li>
               <li>
                 <a>{{ 'NAV_PRACTICE' | translate }}</a>
@@ -92,7 +140,8 @@ import { TranslateService } from '@ngx-translate/core';
         </app-row>
       </app-container>
     </nav>
-    <router-outlet></router-outlet> `,
+    <router-outlet></router-outlet>
+  `,
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {

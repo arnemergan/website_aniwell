@@ -1,9 +1,20 @@
 {
-  "ANIWELL": "Aniwell",
-  "NAV_SERVICES": "Diensten",
-  "NAV_PRACTICE": "Praktijk",
-  "NAV_TEAM": "Team",
-  "NAV_PICTURES": "Foto's",
-  "NAV_APPOINTMENT": "Afspraak",
-  "NAV_PHONE_NUMBER": "052 35 14 14"
+	"24/7": "24/7 bereikbaar",
+	"ADDRESS": "Adres",
+	"ADDRESS_FULL": "Krapstraat 137, Buggenhout",
+	"ANIWELL": "Aniwell",
+	"DAP_ANIWELL": "DAP Aniwell",
+	"HOME_BRIEF_INFO": "Met de juiste kennis en de nodige zorg staan wij paraat voor je geliefde huisdier!",
+	"LANGUAGE": "Nederlands",
+	"NAV_APPOINTMENT": "Afspraak",
+	"NAV_PHONE_NUMBER": "052 35 14 14",
+	"NAV_PICTURES": "Foto's",
+	"NAV_PRACTICE": "Praktijk",
+	"NAV_SERVICES": "Diensten",
+	"NAV_TEAM": "Team",
+	"OUR_SERVICES": "Onze diensten",
+	"SPEAKING_HOUR": "Spreekuur",
+	"SPEAKING_HOUR_WEEK": "Ma tot vrij: 18u - 19u,",
+	"SPEAKING_HOUR_WEEKEND": "Za: 10u - 11u",
+	"WELCOME": "Welkom bij"
 }
