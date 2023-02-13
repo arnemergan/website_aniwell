@@ -4,17 +4,17 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
-  template: `<app-container id="top">
-      <app-row>
+  template: `<div class="container" id="top">
+      <div class="row">
         <div class="col-lg-5">
-          <app-row>
+          <div class="row">
             <div class="col-lg-12">
               <h2>{{ 'WELCOME' | translate }}</h2>
               <h1>{{ 'DAP_ANIWELL' | translate }}</h1>
               <p class="mt-4 mb-5">{{ 'HOME_BRIEF_INFO' | translate }}</p>
             </div>
-          </app-row>
-          <app-row>
+          </div>
+          <div class="row">
             <div class="col-lg-12 mb-5">
               <div class="btn-group">
                 <app-button
@@ -26,10 +26,10 @@ import { TranslateService } from '@ngx-translate/core';
               </div>
               <h5>{{ '24/7' | translate }}</h5>
             </div>
-          </app-row>
-          <app-row>
+          </div>
+          <div class="row">
             <div class="col-lg-12">
-              <app-row>
+              <div class="row">
                 <div class="col-6">
                   <h5>{{ 'ADDRESS' | translate }}</h5>
                   <span>{{ 'ADDRESS_FULL' | translate }}</span>
@@ -40,9 +40,9 @@ import { TranslateService } from '@ngx-translate/core';
                   ><br />
                   <span>{{ 'SPEAKING_HOUR_WEEKEND' | translate }}</span>
                 </div>
-              </app-row>
+              </div>
             </div>
-          </app-row>
+          </div>
         </div>
         <div class="col-lg-1"></div>
         <div class="col-lg-6">
@@ -52,36 +52,39 @@ import { TranslateService } from '@ngx-translate/core';
             alt="Aniwell logo"
           />
         </div>
-      </app-row>
-    </app-container>
-    <app-container id="services">
-      <app-row>
+      </div>
+    </div>
+    <div class="container" id="services">
+      <div class="row pb-2 pt-4">
         <h1>{{ 'OUR_SERVICES' | translate }}</h1>
-      </app-row>
-      <app-row>
-        <div class="col-md-4"></div>
+      </div>
+      <div class="row pb-5 pt-2">
+        <div class="col-md-4 ">
+          <img
+            src="../../assets/images/kleinehuisdieren.jpg"
+            class="img-fluid"
+            alt="Kleine huisdieren"
+          />
+        </div>
         <div class="col-md-8"></div>
-      </app-row>
-      <app-row>
+      </div>
+      <div class="row pb-5 pt-2">
         <div class="col-md-8"></div>
-        <div class="col-md-4"></div>
-      </app-row>
-    </app-container>
-    <app-container>
-      <app-row>
-        <h2>Ons team</h2>
-      </app-row>
-      <app-row>
-        <div class="col-md-6"></div>
-        <div class="col-md-6"></div>
-      </app-row>
-    </app-container>
-    <app-container>
-      <app-row>
+        <div class="col-md-4">
+          <img
+            src="../../assets/images/grotehuisdieren.jpg"
+            class="img-fluid"
+            alt="Kleine huisdieren"
+          />
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
         <div class="col-md-3"><h2>Onze praktijk</h2></div>
         <div class="col-md-9"></div>
-      </app-row>
-    </app-container> `,
+      </div>
+    </div> `,
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {

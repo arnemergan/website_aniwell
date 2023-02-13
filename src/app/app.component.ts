@@ -5,12 +5,13 @@ import { TranslateService } from '@ngx-translate/core';
   selector: 'app-root',
   template: `
     <nav class="fixed-top">
-      <app-container size="fluid" class="top-section">
-        <app-row>
+      <div class="container-fluid top-section">
+        <div class="row">
           <div class="col-lg-12">
-            <app-container>
-              <app-row>
-                <div class="col">
+            <div class="container">
+              <div class="row">
+                <div class="col-5"></div>
+                <div class="col-7">
                   <div class="dropdown">
                     <app-button
                       size="xs"
@@ -45,19 +46,19 @@ import { TranslateService } from '@ngx-translate/core';
                     </ul>
                   </div>
                 </div>
-              </app-row>
-            </app-container>
+              </div>
+            </div>
           </div>
-        </app-row>
-      </app-container>
-      <app-container class="bottom-section">
-        <app-row class="lg-screen">
-          <div class="col-md-3">
+        </div>
+      </div>
+      <div class="container bottom-section">
+        <div class="row lg-screen">
+          <div class="col-md-4">
             <a routerLink="home" fragment="top">
               {{ 'ANIWELL' | translate }}
             </a>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <ul>
               <li>
                 <a routerLink="home" fragment="services">{{
@@ -75,7 +76,7 @@ import { TranslateService } from '@ngx-translate/core';
               </li>
             </ul>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div class="btn-group">
               <app-button
                 size="xs"
@@ -91,15 +92,15 @@ import { TranslateService } from '@ngx-translate/core';
               ></app-button>
             </div>
           </div>
-        </app-row>
-        <app-row class="sm-screen">
-          <div class="col-3">
+        </div>
+        <div class="row sm-screen">
+          <div class="col-4">
             <a routerLink="home">
               {{ 'ANIWELL' | translate }}
             </a>
           </div>
-          <div class="col-6"></div>
-          <div class="col-3">
+          <div class="col-4"></div>
+          <div class="col-4">
             <div class="btn-group">
               <app-button
                 size="xs"
@@ -119,8 +120,8 @@ import { TranslateService } from '@ngx-translate/core';
               ></app-button>
             </div>
           </div>
-        </app-row>
-        <app-row *ngIf="collapsed" class="sm-screen">
+        </div>
+        <div *ngIf="collapsed" class="row sm-screen collapsable-section">
           <div class="col-md-12">
             <ul>
               <li>
@@ -137,8 +138,8 @@ import { TranslateService } from '@ngx-translate/core';
               </li>
             </ul>
           </div>
-        </app-row>
-      </app-container>
+        </div>
+      </div>
     </nav>
     <router-outlet></router-outlet>
   `,
