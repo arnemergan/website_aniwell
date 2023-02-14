@@ -66,7 +66,9 @@ import { TranslateService } from '@ngx-translate/core';
                 }}</a>
               </li>
               <li>
-                <a>{{ 'NAV_PRACTICE' | translate }}</a>
+                <a routerLink="home" fragment="practice">{{
+                  'NAV_PRACTICE' | translate
+                }}</a>
               </li>
               <li>
                 <a>{{ 'NAV_TEAM' | translate }}</a>
@@ -141,7 +143,24 @@ import { TranslateService } from '@ngx-translate/core';
         </div>
       </div>
     </nav>
-    <router-outlet></router-outlet>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row pt-4 pb-4">
+          <div class="col">
+            <a routerLink="home" fragment="top">
+              {{ 'ANIWELL' | translate }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
   `,
   styleUrls: ['./app.component.scss'],
 })

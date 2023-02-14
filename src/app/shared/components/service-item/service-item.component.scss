@@ -1,0 +1,12 @@
+@import "../../../../assets/style/global/globals.scss";
+
+i {
+  color: $primary;
+  font-size: $font-size-md;
+}
+
+span {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semi-bold;
+  padding-left: 15px;
+}
