@@ -1,11 +1,19 @@
 @import "../assets/style/global/globals.scss";
 
+.main-container {
+  min-height: 81vh;
+}
+
 nav {
   height: auto;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 0.4rem;
   background-color: $white;
+
+  .scrolled {
+    box-shadow: 0 4px 2px -2px $grey;
+  }
 
   .top-section {
     .col-lg-12 {
@@ -90,6 +98,11 @@ nav {
         }
 
         &:nth-child(3) {
+          padding-left: 0.6rem;
+          padding-right: 0.6rem;
+        }
+
+        &:nth-child(4) {
           padding-left: 0.6rem;
           padding-right: 1.25rem;
         }

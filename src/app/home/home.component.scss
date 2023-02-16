@@ -101,7 +101,7 @@
   background-color: $primary;
   color: $green-lighter;
 
-  .col-md-5 {
+  .col-lg-5 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,5 +133,26 @@
   ngb-carousel .wrapper > img {
     display: flex;
     height: 50vh;
+  }
+}
+
+#about {
+  .row:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    h1 {
+      color: $primary;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  p {
+    color: $grey;
+    font-size: $font-size-sm;
+    white-space: pre-line;
+    text-align: justify;
   }
 }

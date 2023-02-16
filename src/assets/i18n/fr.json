@@ -1,6 +1,8 @@
 {
 	"24/7": "Disponible 24/7",
 	"ABDOMINAL_SURGERY": "Chirurgie abdominale",
+	"ABOUT-US": "DAP AniWel est un cabinet nouvellement fusionné. Depuis peu, on y trouve non seulement Geert, mais aussi Karlijn. Ils ont décidé d'unir leurs forces et d'essayer ensemble d'offrir les meilleurs soins à votre animal de compagnie. \n\nAniWel n'est pas seulement une collaboration entre deux collègues, mais aussi une composition de deux mots. En effet, on y trouve Ani, qui vient du latin animale pour animal, et Wel, qui vient du latin welfare pour bien-être. Ce que nous voulons dire par là, c'est que nous voulons obtenir les meilleurs soins pour votre animal de compagnie, car le bien-être est d'une importance capitale pour nous. Vous pouvez également venir chez nous avec de petits animaux jusqu'aux animaux plus robustes et plus grands. En bref, venez avec votre rongeur, votre chien, votre chat ou votre oiseau ou nous viendrons à vous pour votre cheval, votre porc, vos moutons, vos chèvres et votre bétail.\n\nNotre cabinet dispose de nombreuses techniques pour établir un diagnostic correct. Par exemple, nous disposons d'un laboratoire interne pour effectuer rapidement une analyse de sang. Un microscope est également disponible, avec lequel nos diagnostics probables sont confirmés. En outre, nous disposons d'un RX numérique et d'un échographe. À l'aide de ces appareils, nous essayons de poser le meilleur diagnostic possible afin d'initier à temps le traitement adéquat.\n\nDepuis peu, vous pouvez également nous trouver à Lebbeke. Nous avons un nouveau cabinet dans la courte Breestraat à Lebbeke et notre tout nouveau RX y est également disponible. Toutefois, les heures de consultation se poursuivent toujours à Buggenhout. Si vous préférez passer à Lebbeke, vous pouvez toujours le mentionner par téléphone. La plupart des opérations auront également lieu à Lebbeke. Nous prendrons toujours des dispositions avec vous pour récupérer votre animal après l'opération. ",
+	"ABOUT-US-TITLE": "A propos de nous",
 	"ADDRESS": "Adresse",
 	"ADDRESS_FULL": "Krapstraat 137, Buggenhout",
 	"ADVICE": "Conseils nutritionnels",
@@ -33,6 +35,10 @@
 	"SPEAKING_HOUR_WEEK": "Lun au Ven : 18 h - 19 h,",
 	"SPEAKING_HOUR_WEEKEND": "Sam : 10 h - 11 h",
 	"STERILISATION_CASTRATION": "Stérilisation et castration",
+	"TEAM": "Notre équipe",
+	"TEAM-P1": "Notre équipe est composée de deux vétérinaires. Geert est probablement connu de la plupart des propriétaires. Il a obtenu son diplôme de vétérinaire généraliste en 1990. Après quelques recherches, il s'est installé à Buggenhout et y est resté depuis. Geert s'intéresse principalement à la médecine vétérinaire de première ligne et ce, pour différentes espèces animales. Il n'hésite pas à traiter des animaux autres que les chiens et les chats. Avec plus de 30 ans d'expérience, il peut répondre à toutes vos questions !",
+	"TEAM-P2": "Karlijn a obtenu son diplôme de vétérinaire en 2022, option ruminants. Elle est motivée et enthousiaste. Comme elle a fait plusieurs stages volontaires pendant ses études, elle aussi est à l'aise dans tous les domaines. Elle s'intéresse particulièrement à la médecine des petits ruminants, comme les moutons et les chèvres. Bien que récemment diplômée, elle a déjà une certaine expérience en imagerie médicale et vous la trouverez derrière l'échographe ou l'appareil RX. Elle suit régulièrement des cours de perfectionnement pour enrichir ses connaissances.",
+	"TEAM-P3": "Tous deux sont passionnés par les sciences et souhaitent toujours élargir leurs connaissances. Son expérience et son enthousiasme permettent à ce cabinet d'offrir une médecine de qualité où la prise en charge de votre animal est centrale. ",
 	"VACCINATION_REGISTRATION": "Vaccination et enregistrement",
 	"WELCOME": "Bienvenue à"
 }

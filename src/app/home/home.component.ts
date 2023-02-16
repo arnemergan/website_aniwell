@@ -61,7 +61,7 @@ import { TranslateService } from '@ngx-translate/core';
       </div>
       <div class="row">
         <div class="container" id="services">
-          <div class="row pb-5">
+          <div class="row pb-3">
             <h1>{{ 'OUR_SERVICES' | translate }}</h1>
           </div>
           <div class="row pb-5 pt-5">
@@ -152,39 +152,24 @@ import { TranslateService } from '@ngx-translate/core';
       <div class="row">
         <div class="col">
           <div class="container">
-            <div class="row">
-              <div class="col-md-5">
+            <div class="row pt-5 pb-5">
+              <div class="col-lg-5">
                 <h1>Onze praktijk</h1>
                 <p>{{ 'ADDRESS_FULL' | translate }}</p>
                 <a href="https://www.google.be/maps" target="_blank">{{
                   'GOOGLE_MAPS' | translate
                 }}</a>
               </div>
-              <div class="col-md-7">
-                <ngb-carousel *ngIf="images">
-                  <ng-template ngbSlide>
+              <div class="col-lg-7 d-none d-lg-block">
+                <ngb-carousel>
+                  <ng-template
+                    ngbSlide
+                    *ngFor="let number of [1, 2, 3, 4, 5, 6, 7]"
+                  >
                     <div class="wrapper">
                       <img
                         class="img-fluid"
-                        [src]="images[0]"
-                        alt="practice image"
-                      />
-                    </div>
-                  </ng-template>
-                  <ng-template ngbSlide>
-                    <div class="wrapper">
-                      <img
-                        class="img-fluid"
-                        [src]="images[1]"
-                        alt="practice image"
-                      />
-                    </div>
-                  </ng-template>
-                  <ng-template ngbSlide>
-                    <div class="wrapper">
-                      <img
-                        class="img-fluid"
-                        [src]="images[2]"
+                        [src]="'../../assets/images/' + number + '.jpg'"
                         alt="practice image"
                       />
                     </div>
@@ -196,15 +181,20 @@ import { TranslateService } from '@ngx-translate/core';
         </div>
       </div>
     </div>
+    <div class="container pt-5" id="about">
+      <div class="row pt-5 pb-3" id="about-us">
+        <h1>{{ 'ABOUT-US-TITLE' | translate }}</h1>
+      </div>
+      <div class="row pb-5">
+        <div class="col">
+          <p>{{ 'ABOUT-US' | translate }}</p>
+        </div>
+      </div>
+    </div>
   `,
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  images = [
-    '../../assets/images/practice-hall.jpg',
-    '../../assets/images/front.jpg',
-  ];
-
   constructor(
     private translateService: TranslateService,
     private activatedRoute: ActivatedRoute,
@@ -223,7 +213,7 @@ export class HomeComponent implements OnInit {
       }
     });
 
-    this.carouselConfig.interval = 5000;
+    this.carouselConfig.interval = 4000;
     this.carouselConfig.pauseOnHover = false;
     this.carouselConfig.keyboard = true;
   }

@@ -71,10 +71,15 @@ import { TranslateService } from '@ngx-translate/core';
                 }}</a>
               </li>
               <li>
-                <a>{{ 'NAV_TEAM' | translate }}</a>
+                <a routerLink="home" fragment="about-us">{{
+                  'ABOUT-US-TITLE' | translate
+                }}</a>
               </li>
               <li>
-                <a>{{ 'NAV_PICTURES' | translate }}</a>
+                <a routerLink="team">{{ 'NAV_TEAM' | translate }}</a>
+              </li>
+              <li>
+                <a routerLink="photos">{{ 'NAV_PICTURES' | translate }}</a>
               </li>
             </ul>
           </div>
@@ -127,23 +132,32 @@ import { TranslateService } from '@ngx-translate/core';
           <div class="col-md-12">
             <ul>
               <li>
-                <a>{{ 'NAV_SERVICES' | translate }}</a>
+                <a routerLink="home" fragment="services">{{
+                  'NAV_SERVICES' | translate
+                }}</a>
               </li>
               <li>
-                <a>{{ 'NAV_PRACTICE' | translate }}</a>
+                <a routerLink="home" fragment="practice">{{
+                  'NAV_PRACTICE' | translate
+                }}</a>
               </li>
               <li>
-                <a>{{ 'NAV_TEAM' | translate }}</a>
+                <a routerLink="home" fragment="about-us">{{
+                  'ABOUT-US-TITLE' | translate
+                }}</a>
               </li>
               <li>
-                <a>{{ 'NAV_PICTURES' | translate }}</a>
+                <a routerLink="team">{{ 'NAV_TEAM' | translate }}</a>
+              </li>
+              <li>
+                <a routerLink="photos">{{ 'NAV_PICTURES' | translate }}</a>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </nav>
-    <div class="container-fluid">
+    <div class="container-fluid main-container">
       <div class="row">
         <div class="col">
           <router-outlet></router-outlet>

@@ -10,9 +10,11 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TeamComponent } from './team/team.component';
+import { PhotosComponent } from './photos/photos.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, TeamComponent, PhotosComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
