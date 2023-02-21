@@ -65,7 +65,9 @@
 }
 
 #services {
-  .row:nth-child(1) {
+  background-color: $grey-light;
+
+  .header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,6 +77,14 @@
       color: $primary;
       font-weight: $font-weight-bold;
     }
+  }
+
+  .col-12 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
   }
 
   h2 {
@@ -154,5 +164,6 @@
     font-size: $font-size-sm;
     white-space: pre-line;
     text-align: justify;
+    padding: 5%;
   }
 }

@@ -3,10 +3,19 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-button',
   template: `
+    <a
+      *ngIf="href"
+      [href]="href"
+      [target]="target"
+      [class]="'btn ' + (color ? color : '') + (size ? ' ' + size : '')"
+    >
+      <i *ngIf="icon" [class]="icon"></i>
+      <span *ngIf="label">{{ label }}</span>
+    </a>
     <button
-      class="btn"
+      *ngIf="!href"
       type="button"
-      [class]="(color ? color : '') + (size ? ' ' + size : '')"
+      [class]="'btn ' + (color ? color : '') + (size ? ' ' + size : '')"
       [routerLink]="routerPath"
     >
       <i *ngIf="icon" [class]="icon"></i>
@@ -26,6 +35,8 @@ export class ButtonComponent implements OnInit {
   @Input() routerPath: string;
   @Input() icon: string;
   @Input() size: 'lg' | 'md' | 'sm' | 'xs' = 'xs';
+  @Input() href: string;
+  @Input() target: string = '_self';
   constructor() {}
 
   ngOnInit(): void {}

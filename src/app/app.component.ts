@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -23,25 +24,28 @@ import { TranslateService } from '@ngx-translate/core';
                     ></app-button>
                     <ul class="dropdown-menu">
                       <li>
-                        <a
+                        <button
                           class="dropdown-item"
-                          [routerLink]="['/', 'nl', 'home']"
-                          >Nederlands</a
+                          (click)="useLanguage('nl')"
                         >
+                          Nederlands
+                        </button>
                       </li>
                       <li>
-                        <a
+                        <button
                           class="dropdown-item"
-                          [routerLink]="['/', 'fr', 'home']"
-                          >Français</a
+                          (click)="useLanguage('fr')"
                         >
+                          Français
+                        </button>
                       </li>
                       <li>
-                        <a
+                        <button
                           class="dropdown-item"
-                          [routerLink]="['/', 'en', 'home']"
-                          >English</a
+                          (click)="useLanguage('en')"
                         >
+                          English
+                        </button>
                       </li>
                     </ul>
                   </div>
@@ -54,7 +58,7 @@ import { TranslateService } from '@ngx-translate/core';
       <div class="container bottom-section">
         <div class="row lg-screen">
           <div class="col-md-4">
-            <a routerLink="home" fragment="top">
+            <a routerLink="home" fragment="top" class="home-link">
               {{ 'ANIWELL' | translate }}
             </a>
           </div>
@@ -89,12 +93,15 @@ import { TranslateService } from '@ngx-translate/core';
                 size="xs"
                 color="outline-primary"
                 [label]="'NAV_APPOINTMENT' | translate"
+                [href]="appointmentUrl"
+                target="_blank"
                 icon="bi bi-calendar3"
               ></app-button>
               <app-button
                 size="xs"
                 color="primary"
                 [label]="'NAV_PHONE_NUMBER' | translate"
+                [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
                 icon="bi bi-telephone-fill"
               ></app-button>
             </div>
@@ -102,7 +109,7 @@ import { TranslateService } from '@ngx-translate/core';
         </div>
         <div class="row sm-screen">
           <div class="col-4">
-            <a routerLink="home">
+            <a routerLink="home" fragment="top" class="home-link">
               {{ 'ANIWELL' | translate }}
             </a>
           </div>
@@ -113,11 +120,14 @@ import { TranslateService } from '@ngx-translate/core';
                 size="xs"
                 color="outline-primary"
                 icon="bi bi-calendar3"
+                [href]="appointmentUrl"
+                target="_blank"
               ></app-button>
               <app-button
                 size="xs"
                 color="outline-primary"
                 icon="bi bi-telephone-fill"
+                [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
               ></app-button>
               <app-button
                 size="lg"
@@ -180,15 +190,25 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent implements OnInit {
   collapsed: boolean = false;
+  appointmentUrl =
+    'https://secure.vetcloud.be/api/booking/create/d8e756b1-4b86-4cb3-9246-5bfbf99559e1';
 
-  constructor(private translateService: TranslateService) {}
+  constructor(
+    private translateService: TranslateService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.translateService.setDefaultLang('nl');
-    this.translateService.use('nl');
+    this.useLanguage('nl');
   }
 
   toggleCollapsed() {
     this.collapsed = !this.collapsed;
+  }
+
+  useLanguage(language: 'nl' | 'en' | 'fr') {
+    this.translateService.use(language);
   }
 }

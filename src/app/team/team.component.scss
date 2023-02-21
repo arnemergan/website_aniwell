@@ -17,3 +17,17 @@ p {
   font-size: $font-size-sm;
   text-align: justify;
 }
+
+.row {
+  padding: 5%;
+}
+
+img {
+  max-height: 100%;
+}
+
+.figure-caption {
+  color: $primary;
+  padding-top: 4px;
+  font-weight: $font-weight-semi-bold;
+}

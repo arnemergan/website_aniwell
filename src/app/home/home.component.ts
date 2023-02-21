@@ -26,6 +26,7 @@ import { TranslateService } from '@ngx-translate/core';
                       color="primary"
                       [label]="'NAV_PHONE_NUMBER' | translate"
                       icon="bi bi-telephone-fill"
+                      [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
                     ></app-button>
                   </div>
                   <h5>{{ '24/7' | translate }}</h5>
@@ -59,87 +60,91 @@ import { TranslateService } from '@ngx-translate/core';
           </div>
         </div>
       </div>
+    </div>
+    <div class="container-fluid" id="services">
       <div class="row">
-        <div class="container" id="services">
-          <div class="row pb-3">
-            <h1>{{ 'OUR_SERVICES' | translate }}</h1>
-          </div>
-          <div class="row pb-5 pt-5">
-            <div class="col-lg-12">
-              <div class="container">
-                <div class="row">
-                  <div class="col-12">
-                    <h2>{{ 'SMALL_PETS' | translate }}</h2>
-                    <p>{{ 'SMALL_PETS_INFO' | translate }}</p>
+        <div class="col">
+          <div class="container pt-5">
+            <div class="row pt-5 pb-3 header">
+              <h1>{{ 'OUR_SERVICES' | translate }}</h1>
+            </div>
+            <div class="row pb-5 pt-5">
+              <div class="col-lg-12">
+                <div class="container">
+                  <div class="row pb-3">
+                    <div class="col-12">
+                      <h2>{{ 'SMALL_PETS' | translate }}</h2>
+                      <p>{{ 'SMALL_PETS_INFO' | translate }}</p>
+                    </div>
                   </div>
-                </div>
-                <div class="row justify-content-center">
-                  <div class="col-lg-4">
-                    <app-service-item
-                      [label]="'VACCINATION_REGISTRATION' | translate"
-                    ></app-service-item>
-                    <app-service-item
-                      [label]="'STERILISATION_CASTRATION' | translate"
-                    ></app-service-item>
-                    <app-service-item
-                      [label]="'DENTAL_CARE' | translate"
-                    ></app-service-item>
-                    <app-service-item
-                      [label]="'MONITORING' | translate"
-                    ></app-service-item>
-                    <app-service-item
-                      [label]="'ADVICE' | translate"
-                    ></app-service-item>
-                  </div>
-                  <div class="col-lg-4">
-                    <app-service-item
-                      [label]="'ABDOMINAL_SURGERY' | translate"
-                    ></app-service-item>
-                    <app-service-item
-                      [label]="'INSEMINATION' | translate"
-                    ></app-service-item>
-                    <app-service-item
-                      [label]="'REFERAL' | translate"
-                    ></app-service-item>
-                    <app-service-item
-                      [label]="'MONITORING_PREGNANT' | translate"
-                    ></app-service-item>
+                  <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                      <app-service-item
+                        [label]="'VACCINATION_REGISTRATION' | translate"
+                      ></app-service-item>
+                      <app-service-item
+                        [label]="'STERILISATION_CASTRATION' | translate"
+                      ></app-service-item>
+                      <app-service-item
+                        [label]="'DENTAL_CARE' | translate"
+                      ></app-service-item>
+                      <app-service-item
+                        [label]="'MONITORING' | translate"
+                      ></app-service-item>
+                      <app-service-item
+                        [label]="'ADVICE' | translate"
+                      ></app-service-item>
+                    </div>
+                    <div class="col-lg-4">
+                      <app-service-item
+                        [label]="'ABDOMINAL_SURGERY' | translate"
+                      ></app-service-item>
+                      <app-service-item
+                        [label]="'INSEMINATION' | translate"
+                      ></app-service-item>
+                      <app-service-item
+                        [label]="'REFERAL' | translate"
+                      ></app-service-item>
+                      <app-service-item
+                        [label]="'MONITORING_PREGNANT' | translate"
+                      ></app-service-item>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row pb-5 pt-5">
-            <div class="col-lg-12">
-              <div class="container">
-                <div class="row">
-                  <div class="col-12">
-                    <h2>{{ 'BIG_PETS' | translate }}</h2>
-                    <p>{{ 'BIG_PETS_INFO' | translate }}</p>
+            <div class="row pb-5 pt-5">
+              <div class="col-lg-12">
+                <div class="container">
+                  <div class="row pb-3">
+                    <div class="col-12">
+                      <h2>{{ 'BIG_PETS' | translate }}</h2>
+                      <p>{{ 'BIG_PETS_INFO' | translate }}</p>
+                    </div>
                   </div>
-                </div>
-                <div class="row justify-content-center">
-                  <div class="col-lg-4">
-                    <app-service-item
-                      [label]="'MONITORING' | translate"
-                    ></app-service-item>
-                    <app-service-item
-                      [label]="'CASTRATION' | translate"
-                    ></app-service-item>
-                    <app-service-item
-                      [label]="'CESAREAN' | translate"
-                    ></app-service-item>
-                  </div>
-                  <div class="col-lg-4">
-                    <app-service-item
-                      [label]="'ABDOMINAL_SURGERY' | translate"
-                    ></app-service-item>
-                    <app-service-item
-                      [label]="'CLAW' | translate"
-                    ></app-service-item>
-                    <app-service-item
-                      [label]="'FARM_GUIDANCE' | translate"
-                    ></app-service-item>
+                  <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                      <app-service-item
+                        [label]="'MONITORING' | translate"
+                      ></app-service-item>
+                      <app-service-item
+                        [label]="'CASTRATION' | translate"
+                      ></app-service-item>
+                      <app-service-item
+                        [label]="'CESAREAN' | translate"
+                      ></app-service-item>
+                    </div>
+                    <div class="col-lg-4">
+                      <app-service-item
+                        [label]="'ABDOMINAL_SURGERY' | translate"
+                      ></app-service-item>
+                      <app-service-item
+                        [label]="'CLAW' | translate"
+                      ></app-service-item>
+                      <app-service-item
+                        [label]="'FARM_GUIDANCE' | translate"
+                      ></app-service-item>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -202,17 +207,6 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const language = this.activatedRoute.snapshot.params.language;
-    if (language) {
-      this.translateService.use(language);
-    }
-
-    this.activatedRoute.params.subscribe((params) => {
-      if (params.language) {
-        this.translateService.use(params.language);
-      }
-    });
-
     this.carouselConfig.interval = 4000;
     this.carouselConfig.pauseOnHover = false;
     this.carouselConfig.keyboard = true;

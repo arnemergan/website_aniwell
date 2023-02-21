@@ -6,10 +6,6 @@ import { TeamComponent } from './team/team.component';
 
 const routes: Routes = [
   {
-    path: ':language/home',
-    component: HomeComponent,
-  },
-  {
     path: 'home',
     component: HomeComponent,
   },
