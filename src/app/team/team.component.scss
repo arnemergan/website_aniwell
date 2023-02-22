@@ -15,19 +15,20 @@
 p {
   color: $grey;
   font-size: $font-size-sm;
-  text-align: justify;
+  text-align: center;
 }
 
-.row {
-  padding: 5%;
-}
+.card {
+  border: none;
 
-img {
-  max-height: 100%;
-}
+  .card-text {
+    color: $primary;
+    padding-top: 4px;
+    font-weight: $font-weight-semi-bold;
+    text-align: center;
+  }
 
-.figure-caption {
-  color: $primary;
-  padding-top: 4px;
-  font-weight: $font-weight-semi-bold;
+  img {
+    max-height: 400px;
+  }
 }
