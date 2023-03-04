@@ -265,7 +265,10 @@ export class AppComponent implements OnInit, AfterViewInit {
         take(1)
       )
       .subscribe((event) => {
-        this.useLanguage(event?.['url']?.split('/')[1]);
+        const language = event?.['url']?.split('/')[1];
+        if (language) {
+          this.useLanguage(language);
+        }
       });
   }
 
