@@ -37,7 +37,7 @@ import { filter, take } from 'rxjs';
                       <li>
                         <button
                           class="dropdown-item"
-                          (click)="useLanguage('nl')"
+                          (click)="changeLanguage('nl')"
                         >
                           Nederlands
                         </button>
@@ -45,7 +45,7 @@ import { filter, take } from 'rxjs';
                       <li>
                         <button
                           class="dropdown-item"
-                          (click)="useLanguage('fr')"
+                          (click)="changeLanguage('fr')"
                         >
                           Français
                         </button>
@@ -53,7 +53,7 @@ import { filter, take } from 'rxjs';
                       <li>
                         <button
                           class="dropdown-item"
-                          (click)="useLanguage('en')"
+                          (click)="changeLanguage('en')"
                         >
                           English
                         </button>
@@ -276,7 +276,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.collapsed = !this.collapsed;
   }
 
-  useLanguage(language: string) {
+  changeLanguage(language: string) {
     this.router.events
       .pipe(
         filter((x) => x?.['url']),
@@ -285,6 +285,10 @@ export class AppComponent implements OnInit, AfterViewInit {
       .subscribe((event) => {
         this.router.navigate([language, event?.['url']?.split('/')[2]]);
       });
+    this.useLanguage(language);
+  }
+
+  useLanguage(language: string) {
     this.currentLanguage = language;
     this.translateService.use(language);
   }
