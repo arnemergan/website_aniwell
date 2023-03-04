@@ -163,7 +163,7 @@ import { TranslateService } from '@ngx-translate/core';
           <div class="container">
             <div class="row pt-5 pb-5">
               <div class="col-lg-5">
-                <h1>Onze praktijk</h1>
+                <h1>{{ 'PRACTICE' | translate }}</h1>
                 <p>{{ 'ADDRESS_FULL' | translate }}</p>
                 <a [href]="mapsUrl" target="_blank">{{
                   'GOOGLE_MAPS' | translate

@@ -277,10 +277,14 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   useLanguage(language: string) {
-    const route = this.router.url.split('/')[2];
-    if (route) {
-      this.router.navigate([language, route]);
-    }
+    this.router.events
+      .pipe(
+        filter((x) => x?.['url']),
+        take(1)
+      )
+      .subscribe((event) => {
+        this.router.navigate([language, event?.['url']?.split('/')[2]]);
+      });
     this.currentLanguage = language;
     this.translateService.use(language);
   }
