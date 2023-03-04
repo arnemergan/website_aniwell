@@ -37,7 +37,11 @@ import { TranslateService } from '@ngx-translate/core';
                   <div class="row">
                     <div class="col-6">
                       <h5>{{ 'ADDRESS' | translate }}</h5>
-                      <span>{{ 'ADDRESS_FULL' | translate }}</span>
+                      <span>{{ 'ADDRESS_FULL' | translate }}</span
+                      ><br />
+                      <a [href]="mapsUrl" target="_blank">{{
+                        'GOOGLE_MAPS' | translate
+                      }}</a>
                     </div>
                     <div class="col-6">
                       <h5>{{ 'SPEAKING_HOUR' | translate }}</h5>
@@ -161,7 +165,7 @@ import { TranslateService } from '@ngx-translate/core';
               <div class="col-lg-5">
                 <h1>Onze praktijk</h1>
                 <p>{{ 'ADDRESS_FULL' | translate }}</p>
-                <a href="https://www.google.be/maps" target="_blank">{{
+                <a [href]="mapsUrl" target="_blank">{{
                   'GOOGLE_MAPS' | translate
                 }}</a>
               </div>
@@ -200,6 +204,9 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  mapsUrl =
+    'https://www.google.com/maps/dir//Krapstraat+137,+Buggenhout/@51.0008989,4.1424515,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x47c394609bbb791b:0xae3091b4ff968d2b!2m2!1d4.1774708!2d51.0008501!3e0?hl=nl';
+
   constructor(
     private translateService: TranslateService,
     private activatedRoute: ActivatedRoute,

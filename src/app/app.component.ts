@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { filter, take } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,16 @@ import { TranslateService } from '@ngx-translate/core';
               <div class="row">
                 <div class="col-5"></div>
                 <div class="col-7">
+                  <div class="dropdown">
+                    <app-button
+                      size="xs"
+                      color="app-dropdown"
+                      icon="bi bi-facebook"
+                      label="facebook"
+                      href="https://www.facebook.com/profile.php?id=100090341491391"
+                      target="_blank"
+                    ></app-button>
+                  </div>
                   <div class="dropdown">
                     <app-button
                       size="xs"
@@ -58,32 +69,54 @@ import { TranslateService } from '@ngx-translate/core';
       <div class="container bottom-section">
         <div class="row lg-screen">
           <div class="col-md-4">
-            <a routerLink="home" fragment="top" class="home-link">
+            <a
+              routerLinkActive="active"
+              [routerLink]="[this.currentLanguage, 'home']"
+              fragment="top"
+              class="home-link"
+            >
               {{ 'ANIWELL' | translate }}
             </a>
           </div>
           <div class="col-md-4">
             <ul>
               <li>
-                <a routerLink="home" fragment="services">{{
-                  'NAV_SERVICES' | translate
-                }}</a>
+                <a
+                  routerLinkActive="active"
+                  [routerLink]="[this.currentLanguage, 'home']"
+                  fragment="services"
+                  >{{ 'NAV_SERVICES' | translate }}</a
+                >
               </li>
               <li>
-                <a routerLink="home" fragment="practice">{{
-                  'NAV_PRACTICE' | translate
-                }}</a>
+                <a
+                  routerLinkActive="active"
+                  [routerLink]="[this.currentLanguage, 'home']"
+                  fragment="practice"
+                  >{{ 'NAV_PRACTICE' | translate }}</a
+                >
               </li>
               <li>
-                <a routerLink="home" fragment="about-us">{{
-                  'ABOUT-US-TITLE' | translate
-                }}</a>
+                <a
+                  routerLinkActive="active"
+                  [routerLink]="[this.currentLanguage, 'home']"
+                  fragment="about-us"
+                  >{{ 'ABOUT-US-TITLE' | translate }}</a
+                >
               </li>
               <li>
-                <a routerLink="team">{{ 'NAV_TEAM' | translate }}</a>
+                <a
+                  routerLinkActive="active"
+                  [routerLink]="[this.currentLanguage, 'team']"
+                  >{{ 'NAV_TEAM' | translate }}</a
+                >
               </li>
               <li>
-                <a routerLink="photos">{{ 'NAV_PICTURES' | translate }}</a>
+                <a
+                  routerLinkActive="active"
+                  [routerLink]="[this.currentLanguage, 'photos']"
+                  >{{ 'NAV_PICTURES' | translate }}</a
+                >
               </li>
             </ul>
           </div>
@@ -109,7 +142,11 @@ import { TranslateService } from '@ngx-translate/core';
         </div>
         <div class="row sm-screen">
           <div class="col-4">
-            <a routerLink="home" fragment="top" class="home-link">
+            <a
+              [routerLink]="[this.currentLanguage, 'home']"
+              fragment="top"
+              class="home-link"
+            >
               {{ 'ANIWELL' | translate }}
             </a>
           </div>
@@ -130,9 +167,17 @@ import { TranslateService } from '@ngx-translate/core';
                 [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
               ></app-button>
               <app-button
+                *ngIf="!collapsed"
                 size="lg"
                 color="outline-primary"
                 icon="bi bi-list"
+                (click)="toggleCollapsed()"
+              ></app-button>
+              <app-button
+                *ngIf="collapsed"
+                size="lg"
+                color="outline-primary"
+                icon="bi bi-x"
                 (click)="toggleCollapsed()"
               ></app-button>
             </div>
@@ -142,25 +187,29 @@ import { TranslateService } from '@ngx-translate/core';
           <div class="col-md-12">
             <ul>
               <li>
-                <a routerLink="home" fragment="services">{{
+                <a (click)="toggleCollapsed('home', 'services')">{{
                   'NAV_SERVICES' | translate
                 }}</a>
               </li>
               <li>
-                <a routerLink="home" fragment="practice">{{
+                <a (click)="toggleCollapsed('home', 'practice')">{{
                   'NAV_PRACTICE' | translate
                 }}</a>
               </li>
               <li>
-                <a routerLink="home" fragment="about-us">{{
+                <a (click)="toggleCollapsed('home', 'about-us')">{{
                   'ABOUT-US-TITLE' | translate
                 }}</a>
               </li>
               <li>
-                <a routerLink="team">{{ 'NAV_TEAM' | translate }}</a>
+                <a (click)="toggleCollapsed('team')">{{
+                  'NAV_TEAM' | translate
+                }}</a>
               </li>
               <li>
-                <a routerLink="photos">{{ 'NAV_PICTURES' | translate }}</a>
+                <a (click)="toggleCollapsed('photos')">{{
+                  'NAV_PICTURES' | translate
+                }}</a>
               </li>
             </ul>
           </div>
@@ -178,8 +227,8 @@ import { TranslateService } from '@ngx-translate/core';
       <div class="container">
         <div class="row pt-4 pb-4">
           <div class="col">
-            <a routerLink="home" fragment="top">
-              {{ 'ANIWELL' | translate }}
+            <a (click)="scrollToTop()">
+              {{ 'DAP_ANIWELL' | translate }}
             </a>
           </div>
         </div>
@@ -188,27 +237,55 @@ import { TranslateService } from '@ngx-translate/core';
   `,
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   collapsed: boolean = false;
   appointmentUrl =
     'https://secure.vetcloud.be/api/booking/create/d8e756b1-4b86-4cb3-9246-5bfbf99559e1';
+  languages: [
+    { label: 'English'; value: 'en' },
+    { label: 'nederlands'; value: 'nl' },
+    { label: 'Français'; value: 'fr' }
+  ];
+  currentLanguage: string = 'nl';
 
   constructor(
     private translateService: TranslateService,
-    private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit() {
     this.translateService.setDefaultLang('nl');
-    this.useLanguage('nl');
   }
 
-  toggleCollapsed() {
+  ngAfterViewInit(): void {
+    this.router.events
+      .pipe(
+        filter((x) => x?.['url']),
+        take(1)
+      )
+      .subscribe((event) => {
+        this.useLanguage(event?.['url']?.split('/')[1]);
+      });
+  }
+
+  toggleCollapsed(route: string, fragment: string) {
+    if (route) {
+      this.router.navigate([this.currentLanguage, route], { fragment });
+    }
     this.collapsed = !this.collapsed;
   }
 
-  useLanguage(language: 'nl' | 'en' | 'fr') {
+  useLanguage(language: string) {
+    const route = this.router.url.split('/')[2];
+    if (route) {
+      this.router.navigate([language, route]);
+    }
+    this.currentLanguage = language;
     this.translateService.use(language);
+  }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
   }
 }

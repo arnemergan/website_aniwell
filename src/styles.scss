@@ -52,4 +52,24 @@ h5 {
   .lg-screen {
     display: none;
   }
+
+  h1 {
+    font-size: $font-size-xxl;
+  }
+
+  h2 {
+    font-size: $font-size-xl;
+  }
+
+  h3 {
+    font-size: $font-size-md;
+  }
+
+  h4 {
+    font-size: $font-size-sm;
+  }
+
+  h5 {
+    font-size: $font-size-xs;
+  }
 }

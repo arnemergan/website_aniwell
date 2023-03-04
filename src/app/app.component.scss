@@ -54,6 +54,7 @@ nav {
       font-weight: $font-weight-bold;
       margin-top: auto;
       margin-bottom: auto;
+      font-family: $font-family-futura;
     }
 
     .lg-screen {
@@ -127,7 +128,9 @@ footer {
     color: $primary;
     font-size: $font-size-md;
     font-weight: $font-weight-bold;
+    font-family: $font-family-futura;
     text-decoration: none;
+    cursor: pointer;
 
     &:hover {
       color: $primary-dark;
@@ -148,6 +151,10 @@ footer {
 
     ul {
       flex-direction: column;
+
+      li {
+        padding: 0 !important;
+      }
     }
   }
 }
@@ -157,6 +164,10 @@ footer {
     .sm-screen {
       a:nth-child(1) {
         font-size: $font-size-lg;
+      }
+
+      i {
+        font-size: $font-size-md;
       }
     }
   }

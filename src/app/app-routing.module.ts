@@ -6,21 +6,25 @@ import { TeamComponent } from './team/team.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: 'nl/home',
     component: HomeComponent,
   },
   {
-    path: 'team',
+    path: ':language/home',
+    component: HomeComponent,
+  },
+  {
+    path: ':language/team',
     component: TeamComponent,
   },
   {
-    path: 'photos',
+    path: ':language/photos',
     component: PhotosComponent,
   },
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: 'home',
+    redirectTo: 'nl/home',
   },
 ];
 

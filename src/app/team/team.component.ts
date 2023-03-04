@@ -7,7 +7,12 @@ import { Component } from '@angular/core';
       <h1>{{ 'TEAM' | translate }}</h1>
     </div>
     <div class="row justify-content-center pt-2 pb-2">
-      <div class="col-md-3">
+      <div class="col-12">
+        <p>{{ 'TEAM-P1' | translate }}</p>
+      </div>
+    </div>
+    <div class="row justify-content-center pt-2 pb-2">
+      <div class="col-md-3 col-sm-7 col-8">
         <div class="card">
           <img
             src="../assets/images/geert.jpg"
@@ -19,14 +24,7 @@ import { Component } from '@angular/core';
           </div>
         </div>
       </div>
-    </div>
-    <div class="row justify-content-center pt-2 pb-2">
-      <div class="col-12">
-        <p>{{ 'TEAM-P1' | translate }}</p>
-      </div>
-    </div>
-    <div class="row justify-content-center pt-2 pb-2">
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-7 col-8">
         <div class="card">
           <img
             src="../assets/images/karlijn.jpg"

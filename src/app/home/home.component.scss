@@ -50,6 +50,12 @@
         color: $secondary;
         font-weight: $font-weight-semi-bold;
       }
+
+      a {
+        color: $primary;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-semi-bold;
+      }
     }
 
     .col-lg-6 {
