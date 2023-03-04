@@ -280,14 +280,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   changeLanguage(language: string) {
-    this.router.events
-      .pipe(
-        filter((x) => x?.['url']),
-        take(1)
-      )
-      .subscribe((event) => {
-        this.router.navigate([language, event?.['url']?.split('/')[2]]);
-      });
+    this.router.navigate([language, this.router.url.split('/')[2]]);
     this.useLanguage(language);
   }
 
