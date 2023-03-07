@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { filter, take } from 'rxjs';
@@ -251,11 +252,30 @@ export class AppComponent implements OnInit, AfterViewInit {
   constructor(
     private translateService: TranslateService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private meta: Meta,
+    private title: Title
   ) {}
 
   ngOnInit() {
     this.translateService.setDefaultLang('nl');
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'DAP aniwell, dierenartsen praktijk gelegen te krapstraat 137, buggenhout',
+      },
+      { name: 'author', content: 'Arne Mergan' },
+      { name: 'robots', content: 'index, follow' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        name: 'keywords',
+        content:
+          'DAP, Aniwell, DAP Aniwell, Krapstraat 137, buggenhout, dierenarstenpraktijk, dierenarts',
+      },
+      { charset: 'UTF-8' },
+    ]);
+    this.title.setTitle('DAP Aniwell');
   }
 
   ngAfterViewInit(): void {
