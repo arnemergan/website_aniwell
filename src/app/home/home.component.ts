@@ -65,7 +65,7 @@ import { TranslateService } from '@ngx-translate/core';
         </div>
       </div>
     </div>
-    <div class="container-fluid" id="services">
+    <div class="container-fluid pb-5" id="services">
       <div class="row">
         <div class="col">
           <div class="container pt-5">
@@ -157,7 +157,7 @@ import { TranslateService } from '@ngx-translate/core';
         </div>
       </div>
     </div>
-    <div class="container-fluid mt-5" id="practice">
+    <div class="container-fluid" id="practice">
       <div class="row">
         <div class="col">
           <div class="container">
