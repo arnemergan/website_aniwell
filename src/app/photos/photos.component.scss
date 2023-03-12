@@ -1,3 +1,5 @@
+@import "../../assets/style/global/globals.scss";
+
 .row {
   display: flex;
   align-items: center;
@@ -11,9 +13,16 @@
     text-align: center;
     height: 450px;
     overflow: hidden;
+    cursor: pointer;
 
     img {
       border: none;
     }
+  }
+}
+
+@media only screen and (max-width: $width-sm) {
+  .row .image {
+    height: 280px;
   }
 }

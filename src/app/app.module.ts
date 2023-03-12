@@ -12,10 +12,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TeamComponent } from './team/team.component';
 import { PhotosComponent } from './photos/photos.component';
+import { GalleryModule } from '@ngx-gallery/core';
+import { LightboxModule } from '@ngx-gallery/lightbox';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, TeamComponent, PhotosComponent],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     SharedModule,
@@ -28,6 +32,8 @@ import { PhotosComponent } from './photos/photos.component';
       },
     }),
     NgbModule,
+    GalleryModule,
+    LightboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -27,7 +27,7 @@ import { Component } from '@angular/core';
       <div class="col-md-3 col-sm-7 col-8">
         <div class="card">
           <img
-            src="../assets/images/karlijn.jpg"
+            src="../assets/images/karlijn.jpeg"
             alt="karlijn"
             class="img-fluid rounded "
           />

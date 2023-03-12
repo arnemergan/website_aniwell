@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Gallery, GalleryItem, ImageItem } from '@ngx-gallery/core';
 
 @Component({
   selector: 'app-photos',
@@ -7,12 +8,13 @@ import { Component } from '@angular/core';
       <div class="container-fluid">
         <div class="row pt-5">
           <div
-            *ngFor="let image of images"
+            *ngFor="let image of imagesProcessed; index as i"
             class="col-xs-12 col-sm-6 col-md-4 col-lg-4 image"
           >
             <img
-              [src]="'../assets/images/' + image"
-              [alt]="image"
+              [src]="image?.data?.thumb"
+              [alt]="image?.data?.alt"
+              [lightbox]="i"
               class="img-fluid rounded img-thumbnail"
             />
           </div>
@@ -22,20 +24,23 @@ import { Component } from '@angular/core';
   `,
   styleUrls: ['./photos.component.scss'],
 })
-export class PhotosComponent {
-  images = [
-    'placeholder.png',
-    'placeholder.png',
-    'placeholder.png',
-    'placeholder.png',
-    'placeholder.png',
-    'placeholder.png',
-    'placeholder.png',
-    'placeholder.png',
-    'placeholder.png',
-    'placeholder.png',
-    'placeholder.png',
-    'placeholder.png',
-    'placeholder.png',
-  ];
+export class PhotosComponent implements OnInit {
+  images = ['1.jpeg', '2.jpeg', '3.jpeg', '4.jpeg'];
+
+  imagesProcessed: GalleryItem[];
+
+  constructor(public gallery: Gallery) {}
+
+  ngOnInit(): void {
+    this.imagesProcessed = this.images.map(
+      (image) =>
+        new ImageItem({
+          src: '../assets/images/photo-album/' + image,
+          thumb: '../assets/images/photo-album/' + image,
+          alt: image,
+        })
+    );
+    this.gallery.ref().play();
+    this.gallery.ref().load(this.imagesProcessed);
+  }
 }
