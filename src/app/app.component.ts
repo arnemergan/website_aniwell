@@ -130,7 +130,7 @@ import { filter, take } from 'rxjs';
             <div class="btn-group">
               <app-button
                 ariaLabel="appointment button"
-                size="xs"
+                size="sm"
                 color="outline-primary"
                 [label]="'NAV_APPOINTMENT' | translate"
                 [href]="appointmentUrl"
@@ -139,7 +139,7 @@ import { filter, take } from 'rxjs';
               ></app-button>
               <app-button
                 ariaLabel="phone number button"
-                size="xs"
+                size="sm"
                 color="primary"
                 [label]="'NAV_PHONE_NUMBER' | translate"
                 [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
@@ -163,7 +163,7 @@ import { filter, take } from 'rxjs';
             <div class="btn-group">
               <app-button
                 ariaLabel="appointment button"
-                size="xs"
+                size="md"
                 color="outline-primary"
                 icon="bi bi-calendar3"
                 [href]="appointmentUrl"
@@ -171,7 +171,7 @@ import { filter, take } from 'rxjs';
               ></app-button>
               <app-button
                 ariaLabel="phone number button"
-                size="xs"
+                size="md"
                 color="outline-primary"
                 icon="bi bi-telephone-fill"
                 [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
