@@ -22,6 +22,7 @@ import { TranslateService } from '@ngx-translate/core';
                 <div class="col-lg-12 mb-5">
                   <div class="btn-group">
                     <app-button
+                      ariaLabel="phone number button"
                       size="sm"
                       color="primary"
                       [label]="'NAV_PHONE_NUMBER' | translate"
@@ -29,22 +30,25 @@ import { TranslateService } from '@ngx-translate/core';
                       [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
                     ></app-button>
                   </div>
-                  <h5>{{ '24/7' | translate }}</h5>
+                  <h2>{{ '24/7' | translate }}</h2>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-12">
                   <div class="row">
                     <div class="col-6">
-                      <h5>{{ 'ADDRESS' | translate }}</h5>
+                      <h2>{{ 'ADDRESS' | translate }}</h2>
                       <span>{{ 'ADDRESS_FULL' | translate }}</span
                       ><br />
-                      <a [href]="mapsUrl" target="_blank">{{
-                        'GOOGLE_MAPS' | translate
-                      }}</a>
+                      <a
+                        [href]="mapsUrl"
+                        target="_blank"
+                        aria-label="google maps"
+                        >{{ 'GOOGLE_MAPS' | translate }}</a
+                      >
                     </div>
                     <div class="col-6">
-                      <h5>{{ 'SPEAKING_HOUR' | translate }}</h5>
+                      <h2>{{ 'SPEAKING_HOUR' | translate }}</h2>
                       <span>{{ 'SPEAKING_HOUR_WEEK' | translate }}</span
                       ><br />
                       <span>{{ 'SPEAKING_HOUR_WEEKEND' | translate }}</span>
@@ -170,15 +174,17 @@ import { TranslateService } from '@ngx-translate/core';
                 }}</a>
               </div>
               <div class="col-lg-7 d-none d-lg-block">
-                <ngb-carousel>
+                <ngb-carousel aria-label="carousel">
                   <ng-template
                     ngbSlide
                     *ngFor="let number of [1, 2, 3, 4, 5, 6, 7]"
+                    aria-label="template carousel"
                   >
                     <div class="wrapper">
                       <img
                         class="img-fluid"
                         [src]="'../../assets/images/' + number + '.jpg'"
+                        loading="lazy"
                         alt="practice image"
                       />
                     </div>

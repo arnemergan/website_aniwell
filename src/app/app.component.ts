@@ -17,6 +17,7 @@ import { filter, take } from 'rxjs';
                 <div class="col-7">
                   <div class="dropdown">
                     <app-button
+                      ariaLabel="facebook"
                       size="xs"
                       color="app-dropdown"
                       icon="bi bi-facebook"
@@ -27,6 +28,7 @@ import { filter, take } from 'rxjs';
                   </div>
                   <div class="dropdown">
                     <app-button
+                      ariaLabel="language"
                       size="xs"
                       color="app-dropdown"
                       icon="bi bi-translate"
@@ -37,6 +39,7 @@ import { filter, take } from 'rxjs';
                     <ul class="dropdown-menu">
                       <li>
                         <button
+                          aria-label="nl language"
                           class="dropdown-item"
                           (click)="changeLanguage('nl')"
                         >
@@ -45,6 +48,7 @@ import { filter, take } from 'rxjs';
                       </li>
                       <li>
                         <button
+                          aria-label="fr language"
                           class="dropdown-item"
                           (click)="changeLanguage('fr')"
                         >
@@ -53,6 +57,7 @@ import { filter, take } from 'rxjs';
                       </li>
                       <li>
                         <button
+                          aria-label="en language"
                           class="dropdown-item"
                           (click)="changeLanguage('en')"
                         >
@@ -71,8 +76,8 @@ import { filter, take } from 'rxjs';
         <div class="row lg-screen">
           <div class="col-md-4">
             <a
-              routerLinkActive="active"
-              [routerLink]="[this.currentLanguage, 'home']"
+              aria-label="home"
+              [href]="this.currentLanguage + '/home'"
               fragment="top"
               class="home-link"
             >
@@ -83,7 +88,7 @@ import { filter, take } from 'rxjs';
             <ul>
               <li>
                 <a
-                  routerLinkActive="active"
+                  aria-label="services"
                   [routerLink]="[this.currentLanguage, 'home']"
                   fragment="services"
                   >{{ 'NAV_SERVICES' | translate }}</a
@@ -91,7 +96,7 @@ import { filter, take } from 'rxjs';
               </li>
               <li>
                 <a
-                  routerLinkActive="active"
+                  aria-label="practice"
                   [routerLink]="[this.currentLanguage, 'home']"
                   fragment="practice"
                   >{{ 'NAV_PRACTICE' | translate }}</a
@@ -99,7 +104,7 @@ import { filter, take } from 'rxjs';
               </li>
               <li>
                 <a
-                  routerLinkActive="active"
+                  aria-label="about us"
                   [routerLink]="[this.currentLanguage, 'home']"
                   fragment="about-us"
                   >{{ 'ABOUT-US-TITLE' | translate }}</a
@@ -107,14 +112,14 @@ import { filter, take } from 'rxjs';
               </li>
               <li>
                 <a
-                  routerLinkActive="active"
+                  aria-label="team"
                   [routerLink]="[this.currentLanguage, 'team']"
                   >{{ 'NAV_TEAM' | translate }}</a
                 >
               </li>
               <li>
                 <a
-                  routerLinkActive="active"
+                  aria-label="photos"
                   [routerLink]="[this.currentLanguage, 'photos']"
                   >{{ 'NAV_PICTURES' | translate }}</a
                 >
@@ -124,6 +129,7 @@ import { filter, take } from 'rxjs';
           <div class="col-md-4">
             <div class="btn-group">
               <app-button
+                ariaLabel="appointment button"
                 size="xs"
                 color="outline-primary"
                 [label]="'NAV_APPOINTMENT' | translate"
@@ -132,6 +138,7 @@ import { filter, take } from 'rxjs';
                 icon="bi bi-calendar3"
               ></app-button>
               <app-button
+                ariaLabel="phone number button"
                 size="xs"
                 color="primary"
                 [label]="'NAV_PHONE_NUMBER' | translate"
@@ -144,7 +151,7 @@ import { filter, take } from 'rxjs';
         <div class="row sm-screen">
           <div class="col-4">
             <a
-              [routerLink]="[this.currentLanguage, 'home']"
+              [href]="this.currentLanguage + '/home'"
               fragment="top"
               class="home-link"
             >
@@ -155,6 +162,7 @@ import { filter, take } from 'rxjs';
           <div class="col-4">
             <div class="btn-group">
               <app-button
+                ariaLabel="appointment button"
                 size="xs"
                 color="outline-primary"
                 icon="bi bi-calendar3"
@@ -162,6 +170,7 @@ import { filter, take } from 'rxjs';
                 target="_blank"
               ></app-button>
               <app-button
+                ariaLabel="phone number button"
                 size="xs"
                 color="outline-primary"
                 icon="bi bi-telephone-fill"
@@ -169,6 +178,7 @@ import { filter, take } from 'rxjs';
               ></app-button>
               <app-button
                 *ngIf="!collapsed"
+                ariaLabel="not collapsed button"
                 size="lg"
                 color="outline-primary"
                 icon="bi bi-list"
@@ -176,6 +186,7 @@ import { filter, take } from 'rxjs';
               ></app-button>
               <app-button
                 *ngIf="collapsed"
+                ariaLabel="collapsed button"
                 size="lg"
                 color="outline-primary"
                 icon="bi bi-x"
@@ -188,29 +199,38 @@ import { filter, take } from 'rxjs';
           <div class="col-md-12">
             <ul>
               <li>
-                <a (click)="toggleCollapsed('home', 'services')">{{
-                  'NAV_SERVICES' | translate
-                }}</a>
+                <button
+                  (click)="toggleCollapsed('home', 'services')"
+                  aria-label="services"
+                >
+                  {{ 'NAV_SERVICES' | translate }}
+                </button>
               </li>
               <li>
-                <a (click)="toggleCollapsed('home', 'practice')">{{
-                  'NAV_PRACTICE' | translate
-                }}</a>
+                <button
+                  (click)="toggleCollapsed('home', 'practice')"
+                  aria-label="practice"
+                >
+                  {{ 'NAV_PRACTICE' | translate }}
+                </button>
               </li>
               <li>
-                <a (click)="toggleCollapsed('home', 'about-us')">{{
-                  'ABOUT-US-TITLE' | translate
-                }}</a>
+                <button
+                  (click)="toggleCollapsed('home', 'about-us')"
+                  aria-label="about us"
+                >
+                  {{ 'ABOUT-US-TITLE' | translate }}
+                </button>
               </li>
               <li>
-                <a (click)="toggleCollapsed('team')">{{
-                  'NAV_TEAM' | translate
-                }}</a>
+                <button (click)="toggleCollapsed('team')" aria-label="team">
+                  {{ 'NAV_TEAM' | translate }}
+                </button>
               </li>
               <li>
-                <a (click)="toggleCollapsed('photos')">{{
-                  'NAV_PICTURES' | translate
-                }}</a>
+                <button (click)="toggleCollapsed('photos')" aria-label="photos">
+                  {{ 'NAV_PICTURES' | translate }}
+                </button>
               </li>
             </ul>
           </div>
@@ -228,9 +248,9 @@ import { filter, take } from 'rxjs';
       <div class="container">
         <div class="row pt-4 pb-4">
           <div class="col">
-            <a (click)="scrollToTop()">
+            <button (click)="scrollToTop()" aria-label="home">
               {{ 'DAP_ANIWELL' | translate }}
-            </a>
+            </button>
           </div>
         </div>
       </div>

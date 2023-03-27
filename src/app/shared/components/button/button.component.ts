@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
       *ngIf="href"
       [href]="href"
       [target]="target"
+      [attr.aria-label]="ariaLabel"
       [class]="'btn ' + (color ? color : '') + (size ? ' ' + size : '')"
     >
       <i *ngIf="icon" [class]="icon"></i>
@@ -16,6 +17,7 @@ import { Component, OnInit, Input } from '@angular/core';
       *ngIf="!href"
       type="button"
       [class]="'btn ' + (color ? color : '') + (size ? ' ' + size : '')"
+      [attr.aria-label]="ariaLabel"
       [routerLink]="routerPath"
     >
       <i *ngIf="icon" [class]="icon"></i>
@@ -37,6 +39,7 @@ export class ButtonComponent implements OnInit {
   @Input() size: 'lg' | 'md' | 'sm' | 'xs' = 'xs';
   @Input() href: string;
   @Input() target: string = '_self';
+  @Input() ariaLabel: string;
   constructor() {}
 
   ngOnInit(): void {}

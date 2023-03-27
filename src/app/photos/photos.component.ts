@@ -15,6 +15,7 @@ import { Gallery, GalleryItem, ImageItem } from '@ngx-gallery/core';
               [src]="image?.data?.thumb"
               [alt]="image?.data?.alt"
               [lightbox]="i"
+              loading="lazy"
               class="img-fluid rounded img-thumbnail"
             />
           </div>
