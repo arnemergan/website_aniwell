@@ -283,16 +283,11 @@ export class AppComponent implements OnInit, AfterViewInit {
       {
         name: 'description',
         content:
-          'DAP aniwell, dierenartsen praktijk gelegen te krapstraat 137, buggenhout',
+          'Welkom bij DAP Aniwell, Met de juiste kennis en de nodige zorg staan wij paraat voor je geliefde huisdier! DAP aniwell is een dierenartsen praktijk gelegen te krapstraat 137, buggenhout',
       },
       { name: 'author', content: 'Arne Mergan' },
       { name: 'robots', content: 'index, follow' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        name: 'keywords',
-        content:
-          'DAP, Aniwell, DAP Aniwell, Krapstraat 137, buggenhout, dierenarstenpraktijk, dierenarts',
-      },
       { charset: 'UTF-8' },
     ]);
     this.title.setTitle('DAP Aniwell');
