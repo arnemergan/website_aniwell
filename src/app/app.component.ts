@@ -290,7 +290,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { charset: 'UTF-8' },
     ]);
-    this.title.setTitle('DAP Aniwell');
+    this.title.setTitle('Dierenarts Buggenhout | DAP Aniwell');
   }
 
   ngAfterViewInit(): void {

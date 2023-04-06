@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Gallery, GalleryItem, ImageItem } from '@ngx-gallery/core';
 
 @Component({
@@ -30,9 +31,10 @@ export class PhotosComponent implements OnInit {
 
   imagesProcessed: GalleryItem[];
 
-  constructor(public gallery: Gallery) {}
+  constructor(public gallery: Gallery, private title: Title) {}
 
   ngOnInit(): void {
+    this.title.setTitle("Foto's | dap aniwell");
     this.imagesProcessed = this.images.map(
       (image) =>
         new ImageItem({

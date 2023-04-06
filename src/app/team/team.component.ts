@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-team',
@@ -50,4 +51,8 @@ import { Component } from '@angular/core';
   </div>`,
   styleUrls: ['./team.component.scss'],
 })
-export class TeamComponent {}
+export class TeamComponent {
+  constructor(private title: Title) {
+    title.setTitle('Team | dap aniwell');
+  }
+}
