@@ -11,6 +11,7 @@
 nav {
   height: auto;
   padding-bottom: 0.4rem;
+  border-bottom: 1px solid $primary;
   background-color: $white;
 
   .scrolled {
@@ -124,22 +125,23 @@ nav {
 }
 
 footer {
+  background-color: $primary;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 
   button {
+    background-color: $primary;
     border: none;
-    background-color: $white;
-    color: $primary;
+    color: $green-light;
     font-size: $font-size-md;
     font-weight: $font-weight-bold;
     text-decoration: none;
     cursor: pointer;
 
     &:hover {
-      color: $primary-dark;
+      color: $green-lighter;
     }
   }
 }
@@ -166,15 +168,4 @@ footer {
 }
 
 @media only screen and (max-width: $width-mobile) {
-  nav {
-    .sm-screen {
-      a:nth-child(1) {
-        font-size: $font-size-lg;
-      }
-
-      i {
-        font-size: $font-size-md;
-      }
-    }
-  }
 }

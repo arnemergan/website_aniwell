@@ -11,7 +11,9 @@ import { Component, OnInit, Input } from '@angular/core';
       [class]="'btn ' + (color ? color : '') + (size ? ' ' + size : '')"
     >
       <i *ngIf="icon" [class]="icon"></i>
-      <span *ngIf="label">{{ label }}</span>
+      <span *ngIf="label" [class.disableonmobile]="disableOnMobile">{{
+        label
+      }}</span>
     </a>
     <button
       *ngIf="!href"
@@ -21,7 +23,9 @@ import { Component, OnInit, Input } from '@angular/core';
       [routerLink]="routerPath"
     >
       <i *ngIf="icon" [class]="icon"></i>
-      <span *ngIf="label">{{ label }}</span>
+      <span *ngIf="label" [class.disableonmobile]="disableOnMobile">{{
+        label
+      }}</span>
     </button>
   `,
   styleUrls: ['./button.component.scss'],
@@ -40,6 +44,7 @@ export class ButtonComponent implements OnInit {
   @Input() href: string;
   @Input() target: string = '_self';
   @Input() ariaLabel: string;
+  @Input() disableOnMobile: boolean = false;
   constructor() {}
 
   ngOnInit(): void {}

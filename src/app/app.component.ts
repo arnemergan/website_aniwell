@@ -24,6 +24,7 @@ import { filter, take } from 'rxjs';
                       label="facebook"
                       href="https://www.facebook.com/profile.php?id=100090341491391"
                       target="_blank"
+                      [disableOnMobile]="true"
                     ></app-button>
                   </div>
                   <div class="dropdown">
@@ -35,6 +36,7 @@ import { filter, take } from 'rxjs';
                       [label]="'LANGUAGE' | translate"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
+                      [disableOnMobile]="true"
                     ></app-button>
                     <ul class="dropdown-menu">
                       <li>
@@ -130,7 +132,7 @@ import { filter, take } from 'rxjs';
             <div class="btn-group">
               <app-button
                 ariaLabel="appointment button"
-                size="sm"
+                size="xs"
                 color="outline-primary"
                 [label]="'NAV_APPOINTMENT' | translate"
                 [href]="appointmentUrl"
@@ -139,7 +141,7 @@ import { filter, take } from 'rxjs';
               ></app-button>
               <app-button
                 ariaLabel="phone number button"
-                size="sm"
+                size="xs"
                 color="primary"
                 [label]="'NAV_PHONE_NUMBER' | translate"
                 [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
@@ -150,13 +152,13 @@ import { filter, take } from 'rxjs';
         </div>
         <div class="row sm-screen">
           <div class="col-4">
-            <a
+            <app-button
+              ariaLabel="appointment button"
+              size="md"
+              color="outline-primary"
               [href]="this.currentLanguage + '/home'"
-              fragment="top"
-              class="home-link"
-            >
-              {{ 'ANIWELL' | translate }}
-            </a>
+              icon="bi bi-house-fill"
+            ></app-button>
           </div>
           <div class="col-4"></div>
           <div class="col-4">
@@ -179,7 +181,7 @@ import { filter, take } from 'rxjs';
               <app-button
                 *ngIf="!collapsed"
                 ariaLabel="not collapsed button"
-                size="lg"
+                size="md"
                 color="outline-primary"
                 icon="bi bi-list"
                 (click)="toggleCollapsed()"
@@ -187,7 +189,7 @@ import { filter, take } from 'rxjs';
               <app-button
                 *ngIf="collapsed"
                 ariaLabel="collapsed button"
-                size="lg"
+                size="md"
                 color="outline-primary"
                 icon="bi bi-x"
                 (click)="toggleCollapsed()"
@@ -283,7 +285,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       {
         name: 'description',
         content:
-          'Welkom bij DAP Aniwell, Met de juiste kennis en de nodige zorg staan wij paraat voor je geliefde huisdier! DAP aniwell is een dierenartsen praktijk gelegen te krapstraat 137, buggenhout',
+          'DAP Aniwell is een dierenarts in Buggenhout. DAP Aniwell staat paraat voor de nodige zorgen voor je geliefde huisdier. Het adres van de dierenartsenpraktijk is krapstraat 137, buggenhout. Je kan ons 24/7 bereiken op het nummer 052 35 14 14. ',
       },
       { name: 'author', content: 'Arne Mergan' },
       { name: 'robots', content: 'index, follow' },

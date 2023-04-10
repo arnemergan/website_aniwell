@@ -186,3 +186,9 @@
     padding: 5%;
   }
 }
+
+@media only screen and (max-width: $width-mobile) {
+  #about p {
+    text-align: left;
+  }
+}

@@ -69,3 +69,15 @@ span {
     color: $primary-darker;
   }
 }
+
+@media only screen and (max-width: $width-mobile) {
+  .disableonmobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: $width-sm) {
+  .disableonmobile {
+    display: none;
+  }
+}
