@@ -16,7 +16,7 @@ import { Title } from '@angular/platform-browser';
       <div class="col-md-3 col-sm-7 col-8">
         <div class="card">
           <img
-            src="../assets/images/geert.jpg"
+            src="../assets/images/geert.webp"
             alt="geert"
             class="img-fluid rounded "
           />
@@ -28,7 +28,7 @@ import { Title } from '@angular/platform-browser';
       <div class="col-md-3 col-sm-7 col-8">
         <div class="card">
           <img
-            src="../assets/images/karlijn.jpeg"
+            src="../assets/images/karlijn.webp"
             alt="karlijn"
             class="img-fluid rounded "
           />

@@ -21,7 +21,6 @@ import { filter, take } from 'rxjs';
                       size="xs"
                       color="app-dropdown"
                       icon="bi bi-facebook"
-                      label="facebook"
                       href="https://www.facebook.com/profile.php?id=100090341491391"
                       target="_blank"
                       [disableOnMobile]="true"
@@ -155,7 +154,7 @@ import { filter, take } from 'rxjs';
             <app-button
               ariaLabel="appointment button"
               size="md"
-              color="outline-primary"
+              color="primary"
               [href]="this.currentLanguage + '/home'"
               icon="bi bi-house-fill"
             ></app-button>
@@ -166,7 +165,7 @@ import { filter, take } from 'rxjs';
               <app-button
                 ariaLabel="appointment button"
                 size="md"
-                color="outline-primary"
+                color="primary"
                 icon="bi bi-calendar3"
                 [href]="appointmentUrl"
                 target="_blank"
@@ -174,7 +173,7 @@ import { filter, take } from 'rxjs';
               <app-button
                 ariaLabel="phone number button"
                 size="md"
-                color="outline-primary"
+                color="primary"
                 icon="bi bi-telephone-fill"
                 [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
               ></app-button>
@@ -182,7 +181,7 @@ import { filter, take } from 'rxjs';
                 *ngIf="!collapsed"
                 ariaLabel="not collapsed button"
                 size="md"
-                color="outline-primary"
+                color="primary"
                 icon="bi bi-list"
                 (click)="toggleCollapsed()"
               ></app-button>
@@ -190,7 +189,7 @@ import { filter, take } from 'rxjs';
                 *ngIf="collapsed"
                 ariaLabel="collapsed button"
                 size="md"
-                color="outline-primary"
+                color="primary"
                 icon="bi bi-x"
                 (click)="toggleCollapsed()"
               ></app-button>
@@ -200,39 +199,35 @@ import { filter, take } from 'rxjs';
         <div *ngIf="collapsed" class="row sm-screen collapsable-section">
           <div class="col-md-12">
             <ul>
-              <li>
-                <button
-                  (click)="toggleCollapsed('home', 'services')"
-                  aria-label="services"
-                >
+              <li (click)="toggleCollapsed('home', 'services')">
+                <button aria-label="services">
                   {{ 'NAV_SERVICES' | translate }}
                 </button>
+                <i class="bi bi-arrow-right"></i>
               </li>
-              <li>
-                <button
-                  (click)="toggleCollapsed('home', 'practice')"
-                  aria-label="practice"
-                >
+              <li (click)="toggleCollapsed('home', 'practice')">
+                <button aria-label="practice">
                   {{ 'NAV_PRACTICE' | translate }}
                 </button>
+                <i class="bi bi-arrow-right"></i>
               </li>
-              <li>
-                <button
-                  (click)="toggleCollapsed('home', 'about-us')"
-                  aria-label="about us"
-                >
+              <li (click)="toggleCollapsed('home', 'about-us')">
+                <button aria-label="about us">
                   {{ 'ABOUT-US-TITLE' | translate }}
                 </button>
+                <i class="bi bi-arrow-right"></i>
               </li>
-              <li>
-                <button (click)="toggleCollapsed('team')" aria-label="team">
+              <li (click)="toggleCollapsed('team')">
+                <button aria-label="team">
                   {{ 'NAV_TEAM' | translate }}
                 </button>
+                <i class="bi bi-arrow-right"></i>
               </li>
-              <li>
-                <button (click)="toggleCollapsed('photos')" aria-label="photos">
+              <li (click)="toggleCollapsed('photos')">
+                <button aria-label="photos">
                   {{ 'NAV_PICTURES' | translate }}
                 </button>
+                <i class="bi bi-arrow-right"></i>
               </li>
             </ul>
           </div>
@@ -248,11 +243,61 @@ import { filter, take } from 'rxjs';
     </div>
     <footer>
       <div class="container">
-        <div class="row pt-4 pb-4">
+        <div class="row pt-5">
           <div class="col">
-            <button (click)="scrollToTop()" aria-label="home">
-              {{ 'DAP_ANIWELL' | translate }}
-            </button>
+            <ul>
+              <li>
+                <a
+                  aria-label="home"
+                  [routerLink]="[this.currentLanguage, 'home']"
+                  fragment="top"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  aria-label="services"
+                  [routerLink]="[this.currentLanguage, 'home']"
+                  fragment="services"
+                  >{{ 'NAV_SERVICES' | translate }}</a
+                >
+              </li>
+              <li>
+                <a
+                  aria-label="practice"
+                  [routerLink]="[this.currentLanguage, 'home']"
+                  fragment="practice"
+                  >{{ 'NAV_PRACTICE' | translate }}</a
+                >
+              </li>
+              <li>
+                <a
+                  aria-label="about us"
+                  [routerLink]="[this.currentLanguage, 'home']"
+                  fragment="about-us"
+                  >{{ 'ABOUT-US-TITLE' | translate }}</a
+                >
+              </li>
+              <li>
+                <a
+                  aria-label="team"
+                  [routerLink]="[this.currentLanguage, 'team']"
+                  >{{ 'NAV_TEAM' | translate }}</a
+                >
+              </li>
+              <li>
+                <a
+                  aria-label="photos"
+                  [routerLink]="[this.currentLanguage, 'photos']"
+                  >{{ 'NAV_PICTURES' | translate }}</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row pt-3 pb-4">
+          <div class="col">
+            <span>Copyright 2023 - DAP Aniwell</span>
           </div>
         </div>
       </div>

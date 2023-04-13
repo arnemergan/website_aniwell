@@ -184,7 +184,6 @@ import { TranslateService } from '@ngx-translate/core';
                       <img
                         class="img-fluid"
                         [src]="'../../assets/images/' + number + '.webp'"
-                        loading="lazy"
                         alt="practice image"
                       />
                     </div>
