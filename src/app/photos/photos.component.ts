@@ -27,7 +27,7 @@ import { Gallery, GalleryItem, ImageItem } from '@ngx-gallery/core';
   styleUrls: ['./photos.component.scss'],
 })
 export class PhotosComponent implements OnInit {
-  images = ['1.jpeg', '2.jpeg', '3.jpeg', '4.jpeg'];
+  images = ['1.webp', '2.webp', '3.webp', '4.webp'];
 
   imagesProcessed: GalleryItem[];
 

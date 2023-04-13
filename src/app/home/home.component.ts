@@ -60,7 +60,7 @@ import { TranslateService } from '@ngx-translate/core';
             <div class="col-lg-1"></div>
             <div class="col-lg-6">
               <img
-                src="../../assets/images/front.jpg"
+                src="../../assets/images/front.webp"
                 class="img-fluid d-none d-lg-flex"
                 alt="Aniwell logo"
               />
@@ -183,7 +183,7 @@ import { TranslateService } from '@ngx-translate/core';
                     <div class="wrapper">
                       <img
                         class="img-fluid"
-                        [src]="'../../assets/images/' + number + '.jpg'"
+                        [src]="'../../assets/images/' + number + '.webp'"
                         loading="lazy"
                         alt="practice image"
                       />
