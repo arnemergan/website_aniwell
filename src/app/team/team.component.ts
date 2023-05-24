@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -51,8 +51,11 @@ import { Title } from '@angular/platform-browser';
   </div>`,
   styleUrls: ['./team.component.scss'],
 })
-export class TeamComponent {
-  constructor(private title: Title) {
-    title.setTitle('Team | dap aniwell');
+export class TeamComponent implements OnInit {
+  constructor(private title: Title) {}
+
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
+    this.title.setTitle('Team | dap aniwell');
   }
 }
