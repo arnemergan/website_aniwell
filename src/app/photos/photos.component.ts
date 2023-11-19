@@ -21,7 +21,7 @@ import { Gallery, GalleryItem, ImageItem } from '@ngx-gallery/core';
             />
           </div>
         </div>
-        <div class="row pb-5 justify-content-center">
+        <div class="row pb-5 justify-content-center" *ngIf="showGoogleUrl">
           <div class="col-8">
             <a [href]="photosUrl" target="_blank">{{
               'PHOTOS_LINK' | translate
@@ -38,6 +38,7 @@ export class PhotosComponent implements OnInit {
 
   imagesProcessed: GalleryItem[];
   photosUrl = 'https://photos.app.goo.gl/6Xk22GAuGTavENer7';
+  showGoogleUrl = false;
 
   constructor(public gallery: Gallery, private title: Title) {}
 
