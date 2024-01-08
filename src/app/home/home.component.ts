@@ -18,37 +18,50 @@ import { TranslateService } from '@ngx-translate/core';
                   <p class="mt-4 mb-5">{{ 'HOME_BRIEF_INFO' | translate }}</p>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-lg-12 mb-5">
-                  <div class="btn-group">
-                    <app-button
-                      ariaLabel="phone number button"
-                      size="sm"
-                      color="primary"
-                      [label]="'NAV_PHONE_NUMBER' | translate"
-                      icon="bi bi-telephone-fill"
-                      [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
-                    ></app-button>
+              <div class="row mb-5">
+                <div class="col-lg-12">
+                  <div class="row">
+                    <div class="col-12">
+                      <h3 [innerHTML]="'CONTACT' | translate"></h3>
+                      <app-button
+                        ariaLabel="phone number button"
+                        size="md"
+                        color="outline-primary"
+                        [label]="'NAV_PHONE_NUMBER' | translate"
+                        icon="bi bi-phone-fill"
+                        [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
+                        class="mb-3"
+                      ></app-button>
+                      <br />
+                      <app-button
+                        ariaLabel="email number button"
+                        size="md"
+                        color="outline-primary"
+                        [label]="emailAddress"
+                        icon="bi bi-envelope-at"
+                        [href]="'mailto:' + emailAddress"
+                      ></app-button>
+                    </div>
                   </div>
-                  <h2>{{ '24/7' | translate }}</h2>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-12">
                   <div class="row">
                     <div class="col-6">
-                      <h2>{{ 'ADDRESS' | translate }}</h2>
+                      <h3>{{ 'ADDRESS' | translate }}</h3>
                       <span>{{ 'ADDRESS_FULL' | translate }}</span
                       ><br />
                       <a
                         [href]="mapsUrl"
                         target="_blank"
                         aria-label="google maps"
+                        id="googleMaps"
                         >{{ 'GOOGLE_MAPS' | translate }}</a
                       >
                     </div>
                     <div class="col-6">
-                      <h2>{{ 'SPEAKING_HOUR' | translate }}</h2>
+                      <h3>{{ 'SPEAKING_HOUR' | translate }}</h3>
                       <span>{{ 'SPEAKING_HOUR_WEEK' | translate }}</span
                       ><br />
                       <span>{{ 'SPEAKING_HOUR_WEEKEND' | translate }}</span>
@@ -209,6 +222,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  emailAddress = 'info@dap-aniwell.be';
   mapsUrl =
     'https://www.google.com/maps/dir//Krapstraat+137,+Buggenhout/@51.0008989,4.1424515,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x47c394609bbb791b:0xae3091b4ff968d2b!2m2!1d4.1774708!2d51.0008501!3e0?hl=nl';
 

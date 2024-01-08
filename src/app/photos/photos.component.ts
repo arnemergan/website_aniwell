@@ -37,7 +37,7 @@ export class PhotosComponent implements OnInit {
   images = ['1.webp', '2.webp', '3.webp'];
 
   imagesProcessed: GalleryItem[];
-  photosUrl = 'https://photos.app.goo.gl/6Xk22GAuGTavENer7';
+  photosUrl = '';
   showGoogleUrl = false;
 
   constructor(public gallery: Gallery, private title: Title) {}

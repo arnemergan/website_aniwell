@@ -144,7 +144,7 @@ import { filter, take } from 'rxjs';
                 color="primary"
                 [label]="'NAV_PHONE_NUMBER' | translate"
                 [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
-                icon="bi bi-telephone-fill"
+                icon="bi bi-phone-fill"
               ></app-button>
             </div>
           </div>
@@ -174,7 +174,7 @@ import { filter, take } from 'rxjs';
                 ariaLabel="phone number button"
                 size="md"
                 color="primary"
-                icon="bi bi-telephone-fill"
+                icon="bi bi-phone-fill"
                 [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
               ></app-button>
               <app-button
