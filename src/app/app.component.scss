@@ -8,6 +8,10 @@
   }
 }
 
+/*.appointment_button a span {
+  font-size: $font-size-xs;
+}*/
+
 nav {
   height: auto;
   padding-bottom: 0.4rem;
@@ -189,11 +193,13 @@ footer {
           &:focus {
             background-color: $primary-dark;
 
+            a,
             button {
               background-color: $primary-dark;
             }
           }
 
+          a,
           button {
             background-color: $primary;
             color: $green-light;

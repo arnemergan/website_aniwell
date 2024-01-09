@@ -131,26 +131,18 @@ import { filter, take } from 'rxjs';
             <div class="btn-group">
               <app-button
                 ariaLabel="appointment button"
-                size="xs"
-                color="outline-primary"
+                size="sm"
+                color="primary"
                 [label]="'NAV_APPOINTMENT' | translate"
                 [href]="appointmentUrl"
                 target="_blank"
                 icon="bi bi-calendar3"
               ></app-button>
-              <app-button
-                ariaLabel="phone number button"
-                size="xs"
-                color="primary"
-                [label]="'NAV_PHONE_NUMBER' | translate"
-                [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
-                icon="bi bi-phone-fill"
-              ></app-button>
             </div>
           </div>
         </div>
         <div class="row sm-screen">
-          <div class="col-4">
+          <div class="col-2">
             <app-button
               ariaLabel="appointment button"
               size="md"
@@ -159,23 +151,18 @@ import { filter, take } from 'rxjs';
               icon="bi bi-house-fill"
             ></app-button>
           </div>
-          <div class="col-4"></div>
-          <div class="col-4">
+          <div class="col-1"></div>
+          <div class="col-9">
             <div class="btn-group">
               <app-button
                 ariaLabel="appointment button"
                 size="md"
                 color="primary"
                 icon="bi bi-calendar3"
+                [label]="'APPOINTMENT' | translate"
                 [href]="appointmentUrl"
                 target="_blank"
-              ></app-button>
-              <app-button
-                ariaLabel="phone number button"
-                size="md"
-                color="primary"
-                icon="bi bi-phone-fill"
-                [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
+                class="appointment_button"
               ></app-button>
               <app-button
                 *ngIf="!collapsed"
@@ -227,6 +214,12 @@ import { filter, take } from 'rxjs';
                 <button aria-label="photos">
                   {{ 'NAV_PICTURES' | translate }}
                 </button>
+                <i class="bi bi-arrow-right"></i>
+              </li>
+              <li>
+                <a aria-label="appointment" [href]="appointmentUrl">
+                  {{ 'NAV_APPOINTMENT' | translate }}
+                </a>
                 <i class="bi bi-arrow-right"></i>
               </li>
             </ul>
