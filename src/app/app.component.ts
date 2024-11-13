@@ -103,7 +103,7 @@ import { filter, take } from 'rxjs';
                   >{{ 'NAV_PRACTICE' | translate }}</a
                 >
               </li>
-              <li>
+              <li *ngIf="show">
                 <a
                   aria-label="about us"
                   [routerLink]="[this.currentLanguage, 'home']"
@@ -111,7 +111,7 @@ import { filter, take } from 'rxjs';
                   >{{ 'ABOUT-US-TITLE' | translate }}</a
                 >
               </li>
-              <li>
+              <li *ngIf="show">
                 <a
                   aria-label="team"
                   [routerLink]="[this.currentLanguage, 'team']"
@@ -198,13 +198,13 @@ import { filter, take } from 'rxjs';
                 </button>
                 <i class="bi bi-arrow-right"></i>
               </li>
-              <li (click)="toggleCollapsed('home', 'about-us')">
+              <li *ngIf="show" (click)="toggleCollapsed('home', 'about-us')">
                 <button aria-label="about us">
                   {{ 'ABOUT-US-TITLE' | translate }}
                 </button>
                 <i class="bi bi-arrow-right"></i>
               </li>
-              <li (click)="toggleCollapsed('team')">
+              <li *ngIf="show" (click)="toggleCollapsed('team')">
                 <button aria-label="team">
                   {{ 'NAV_TEAM' | translate }}
                 </button>
@@ -263,7 +263,7 @@ import { filter, take } from 'rxjs';
                   >{{ 'NAV_PRACTICE' | translate }}</a
                 >
               </li>
-              <li>
+              <li *ngIf="show">
                 <a
                   aria-label="about us"
                   [routerLink]="[this.currentLanguage, 'home']"
@@ -271,7 +271,7 @@ import { filter, take } from 'rxjs';
                   >{{ 'ABOUT-US-TITLE' | translate }}</a
                 >
               </li>
-              <li>
+              <li *ngIf="show">
                 <a
                   aria-label="team"
                   [routerLink]="[this.currentLanguage, 'team']"
@@ -299,6 +299,7 @@ import { filter, take } from 'rxjs';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, AfterViewInit {
+  show = false;
   collapsed: boolean = false;
   appointmentUrl =
     'https://secure.vetcloud.be/api/booking/create/d8e756b1-4b86-4cb3-9246-5bfbf99559e1';
@@ -323,14 +324,16 @@ export class AppComponent implements OnInit, AfterViewInit {
       {
         name: 'description',
         content:
-          'DAP Aniwell is een dierenarts in Buggenhout. DAP Aniwell staat paraat voor de nodige zorgen voor je geliefde huisdier. Het adres van de dierenartsenpraktijk is krapstraat 137, buggenhout. Je kan ons 24/7 bereiken op het nummer 052 35 14 14. ',
+          'DAP Aniwell is een dierenarts in voor de regio Buggenhout, Lebbeke, Dendermonde, Puurs, Opwijk en Merchtem. DAP Aniwell staat paraat voor de nodige zorgen voor je geliefde huisdier. Het adres van de dierenartsenpraktijk is krapstraat 137, buggenhout. Je kan ons 24/7 bereiken op het nummer 052 35 14 14. ',
       },
       { name: 'author', content: 'Arne Mergan' },
       { name: 'robots', content: 'index, follow' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { charset: 'UTF-8' },
     ]);
-    this.title.setTitle('Dierenarts Buggenhout | DAP Aniwell');
+    this.title.setTitle(
+      'Dierenarts regio Buggenhout, Lebbeke, Dendermonde, Puurs, Opwijk en Merchtem | DAP Aniwell'
+    );
   }
 
   ngAfterViewInit(): void {

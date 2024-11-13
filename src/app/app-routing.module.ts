@@ -13,10 +13,10 @@ const routes: Routes = [
     path: ':language/home',
     component: HomeComponent,
   },
-  {
+  /*{
     path: ':language/team',
     component: TeamComponent,
-  },
+  },*/
   {
     path: ':language/photos',
     component: PhotosComponent,

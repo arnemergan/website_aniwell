@@ -50,6 +50,12 @@ h3 {
   z-index: 100000;
 }
 
+@media only screen and (max-height: 700px) {
+  body {
+    padding-top: 20vh;
+  }
+}
+
 @media only screen and (max-width: $width-sm) {
   .sm-screen {
     display: inline;

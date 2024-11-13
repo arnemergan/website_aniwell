@@ -23,6 +23,13 @@
         color: $grey;
         font-size: $font-size-sm;
       }
+      img {
+        border-radius: 25px;
+      }
+    }
+
+    .col-md-12 {
+      padding: 10px 0 15px 0;
     }
 
     .row:nth-child(3),
@@ -44,6 +51,10 @@
         font-size: $font-size-xs;
         font-weight: $font-weight-semi-bold;
       }
+
+      .header-color-secondary {
+        color: $primary;
+      }
     }
 
     .row:nth-child(2) {
@@ -59,16 +70,16 @@
         color: $primary;
         text-decoration: dashed;
       }
+
+      .header-color-secondary {
+        color: $primary;
+      }
     }
 
     .col-lg-6 {
       display: flex;
       align-items: center;
       justify-content: center;
-
-      img {
-        border-radius: 25px;
-      }
     }
   }
 }

@@ -67,6 +67,10 @@ nav {
         display: flex;
       }
 
+      div:nth-child(2) {
+        justify-content: center;
+      }
+
       div:nth-child(3) {
         text-align: center;
         align-items: center;
@@ -134,6 +138,7 @@ footer {
   align-items: center;
   justify-content: center;
   text-align: center;
+  border-top: 1px solid $white;
 
   button {
     background-color: $primary;

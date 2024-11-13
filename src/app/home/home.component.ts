@@ -10,46 +10,34 @@ import { TranslateService } from '@ngx-translate/core';
       <div class="row">
         <div class="container" id="top">
           <div class="row">
-            <div class="col-lg-5">
+            <div class="col-lg-12">
               <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-3">
+                  <img
+                    src="../../assets/images/front.webp"
+                    class="img-fluid d-none d-lg-flex"
+                    alt="Aniwell logo"
+                  />
+                </div>
+                <div class="col-lg-5">
                   <h2>{{ 'WELCOME' | translate }}</h2>
                   <h1>{{ 'DAP_ANIWELL' | translate }}</h1>
-                  <p class="mt-4 mb-5">{{ 'HOME_BRIEF_INFO' | translate }}</p>
+                </div>
+                <div class="col-lg-2"></div>
+                <div col-lg-12>
+                  <p class="mt-lg-5 mb-lg-5 mb-md-0 mt-md-0">
+                    {{ 'HOME_BRIEF_INFO' | translate }}
+                  </p>
                 </div>
               </div>
-              <div class="row mb-5">
+              <div class="row mb-lg-4 mb-md-0">
                 <div class="col-lg-12">
                   <div class="row">
-                    <div class="col-12">
-                      <h3 [innerHTML]="'CONTACT' | translate"></h3>
-                      <app-button
-                        ariaLabel="phone number button"
-                        size="md"
-                        color="outline-primary"
-                        [label]="'NAV_PHONE_NUMBER' | translate"
-                        icon="bi bi-phone-fill"
-                        [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
-                        class="mb-3"
-                      ></app-button>
-                      <br />
-                      <app-button
-                        ariaLabel="email number button"
-                        size="md"
-                        color="outline-primary"
-                        [label]="emailAddress"
-                        icon="bi bi-envelope-at"
-                        [href]="'mailto:' + emailAddress"
-                      ></app-button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="row">
-                    <div class="col-6">
-                      <h3>{{ 'ADDRESS' | translate }}</h3>
+                    <div class="col-lg-4 col-md-12 mb-md-3 text-center">
+                      <h3 class="header-color-secondary">
+                        {{ 'ADDRESS' | translate }}
+                      </h3>
                       <span>{{ 'ADDRESS_FULL' | translate }}</span
                       ><br />
                       <a
@@ -60,23 +48,45 @@ import { TranslateService } from '@ngx-translate/core';
                         >{{ 'GOOGLE_MAPS' | translate }}</a
                       >
                     </div>
-                    <div class="col-6">
-                      <h3>{{ 'SPEAKING_HOUR' | translate }}</h3>
+                    <div class="col-lg-4 col-md-12 mb-md-3 text-center">
+                      <div class="row">
+                        <div class="col-12">
+                          <h3 [innerHTML]="'CONTACT' | translate"></h3>
+                          <app-button
+                            ariaLabel="phone number button"
+                            size="md"
+                            color="outline-primary"
+                            [label]="'NAV_PHONE_NUMBER' | translate"
+                            icon="bi bi-phone-fill"
+                            [href]="'tel:' + ('NAV_PHONE_NUMBER' | translate)"
+                            class="mb-3"
+                          ></app-button>
+                          <span>{{ '24/7' | translate }}</span>
+                          <br />
+                          <app-button
+                            ariaLabel="email number button"
+                            size="md"
+                            color="outline-primary"
+                            [label]="emailAddress"
+                            icon="bi bi-envelope-at"
+                            [href]="'mailto:' + emailAddress"
+                          ></app-button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 mb-md-3 text-center">
+                      <h3 class="header-color-secondary">
+                        {{ 'SPEAKING_HOUR' | translate }}
+                      </h3>
                       <span>{{ 'SPEAKING_HOUR_WEEK' | translate }}</span
                       ><br />
                       <span>{{ 'SPEAKING_HOUR_WEEKEND' | translate }}</span>
+                      <br />
+                      <span>{{ 'SPEAKING_HOUR_X' | translate }}</span>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-1"></div>
-            <div class="col-lg-6">
-              <img
-                src="../../assets/images/front.webp"
-                class="img-fluid d-none d-lg-flex"
-                alt="Aniwell logo"
-              />
             </div>
           </div>
         </div>
@@ -208,7 +218,7 @@ import { TranslateService } from '@ngx-translate/core';
         </div>
       </div>
     </div>
-    <div class="container pt-5" id="about">
+    <div class="container pt-5" id="about" *ngIf="show">
       <div class="row pt-5 pb-3" id="about-us">
         <h1>{{ 'ABOUT-US-TITLE' | translate }}</h1>
       </div>
@@ -222,7 +232,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  emailAddress = 'info@dap-aniwell.be';
+  show = false;
+  emailAddress = 'geert.theelen@telenet.be';
   mapsUrl =
     'https://www.google.com/maps/dir//Krapstraat+137,+Buggenhout/@51.0008989,4.1424515,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x47c394609bbb791b:0xae3091b4ff968d2b!2m2!1d4.1774708!2d51.0008501!3e0?hl=nl';
 
